@@ -13,12 +13,6 @@ const styles = theme => ({
             marginLeft: 'auto',
             marginRight: 'auto',
         },
-    },
-    title: {
-        flex: 1,
-    },
-    markdown: {
-        padding: `${theme.spacing.unit * 3}px 0`,
     }
 });
 
@@ -34,7 +28,6 @@ function IndexPage(props) {
                 color={"inherit"}
                 align={"center"}
                 noWrap
-                className={classes.title}
             >
                 Hello World!
             </Typography>
