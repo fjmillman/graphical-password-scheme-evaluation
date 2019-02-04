@@ -1,11 +1,11 @@
 import React from 'react';
-import { store, view } from 'react-easy-state'
 import PropTypes from 'prop-types';
+import { store, view } from 'react-easy-state'
 import { withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { increment } from './store/updaters/increment'
+import { getContent } from './store/selectors/getContent'
 
 const styles = theme => ({
     layout: {
@@ -32,17 +32,10 @@ const styles = theme => ({
     },
 });
 
-function IndexPage(props) {
-    const { classes } = props;
+const page = store({ num: 0 });
 
-    const observations = store({
-        stage: 0,
-        content: (
-            <Typography component={"p"} align={"center"} className={classes.text}>
-                Welcome to the study!kjsbldfjkbasd
-            </Typography>
-        )
-    });
+const IndexPage = props => {
+    const { classes } = props;
 
     return (
         <React.Fragment>
@@ -60,23 +53,23 @@ function IndexPage(props) {
                     </Typography>
                 </Toolbar>
                 <main>
-                    {observations.content}
+                    {getContent(page.num, classes)}
                 </main>
                 <Button
                     variant="contained"
                     href="#contained-buttons"
                     className={classes.button}
-                    onClick={increment}
+                    onClick={() => page.num++}
                 >
                     <Typography variant="subtitle1" color="primary">Continue</Typography>
                 </Button>
             </div>
         </React.Fragment>
     );
-}
+};
 
 IndexPage.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default view(withStyles(styles)(IndexPage));
+export default withStyles(styles)(view(IndexPage));
