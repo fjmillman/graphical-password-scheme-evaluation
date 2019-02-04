@@ -5,6 +5,9 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   },
+  "resolutions": {
+    "terser": "3.14.1"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
