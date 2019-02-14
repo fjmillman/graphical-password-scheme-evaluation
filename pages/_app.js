@@ -4,23 +4,23 @@ import Header from "./components/Header";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 export default class EvaluationApp extends App {
-    static async getInitialProps({ Component, ctx }) {
-        let pageProps = {};
+    static async getInitialProps({Component, req}) {
+        let props = {};
 
         if (Component.getInitialProps) {
-          pageProps = await Component.getInitialProps(ctx);
+            props = await Component.getInitialProps(req);
         }
 
-        return { pageProps };
+        return {props};
     }
 
     render() {
-        const { Component, pageProps } = this.props;
+        const {Component, props} = this.props;
         return (
             <Container>
-                <Header />
-                <CssBaseline />
-                <Component {...pageProps} />
+                <Header/>
+                <CssBaseline/>
+                <Component {...props} />
             </Container>
         );
     }

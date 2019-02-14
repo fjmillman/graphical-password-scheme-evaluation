@@ -6,10 +6,12 @@ import Authentication from '../../components/Authentication'
 import Observation from '../../components/Observation'
 import Guess from '../../components/Guess'
 import Debrief from '../../components/Debrief'
+import Complete from '../../components/Complete'
 import Error from '../../components/Error'
+import vault from '../vault'
 
-export const getContent = (stage, classes) => {
-    switch (stage) {
+export const getContent = (classes) => {
+    switch (vault.page) {
         case 0:
             return <Welcome classes={classes}/>;
         case 1:
@@ -30,6 +32,8 @@ export const getContent = (stage, classes) => {
             return <Guess classes={classes}/>;
         case 9:
             return <Debrief classes={classes}/>;
+        case 10:
+            return <Complete classes={classes}/>;
         default:
             return <Error classes={classes}/>
     }

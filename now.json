@@ -1,7 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@now/next" }
+    { "src": "server.js", "use": "@now/node" }
   ],
+  "env": {
+    "MONGODB_URI": "@mongodb-uri"
+  },
   "alias": ["gpa-evaluation"]
 }

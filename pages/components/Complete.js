@@ -1,14 +1,14 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
 
-const Error = props => (
+const Complete = props => (
     <Typography
         component={"p"}
         align={"center"}
         className={props.classes.text}
     >
-        Error: You shouldn't be here
+        Thank you for taking part in this study!
     </Typography>
 );
 
-export default Error
+export default Complete

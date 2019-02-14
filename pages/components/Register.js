@@ -1,31 +1,31 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
-import { nextPage } from "../store/updaters/nextPage";
+import { register } from "../store/updaters/register";
 
-const Welcome = props => (
+const Register = props => (
     <React.Fragment>
         <Typography
             component={"p"}
             align={"center"}
             className={props.classes.text}
         >
-            Welcome to the study!
+            Register here
         </Typography>
         <Button
             variant="contained"
             href="#contained-buttons"
             className={props.classes.button}
-            onClick={nextPage}
+            onClick={register}
         >
             <Typography
                 variant="subtitle1"
                 color="primary"
             >
-                Begin
+                Register
             </Typography>
         </Button>
     </React.Fragment>
 );
 
-export default Welcome
+export default Register

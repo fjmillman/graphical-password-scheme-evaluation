@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { store, view } from 'react-easy-state'
-import { withStyles } from '@material-ui/core/styles';
+import { view } from 'react-easy-state'
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import { getContent } from './store/selectors/getContent'
+import { withStyles } from '@material-ui/core/styles';
+import { getContent } from './store/selectors/getContent';
 
 const styles = theme => ({
     layout: {
@@ -21,8 +20,8 @@ const styles = theme => ({
     toolbarMain: {
         borderBottom: `1px solid ${theme.palette.grey[300]}`,
     },
-    toolbarTitle: {
-        flex: 1,
+    main: {
+        margin: theme.spacing.unit * 3,
     },
     text: {
         margin: theme.spacing.unit * 3,
@@ -32,41 +31,26 @@ const styles = theme => ({
     },
 });
 
-const page = store({ num: 0 });
-
-const IndexPage = props => {
-    const { classes } = props;
-
-    return (
-        <React.Fragment>
-            <div className={classes.layout}>
-                <Toolbar className={classes.toolbarMain}>
-                    <Typography
-                        component={"h2"}
-                        variant={"h5"}
-                        color={"inherit"}
-                        align={"center"}
-                        noWrap
-                        className={classes.toolbarTitle}
-                    >
-                        Graphical Password Scheme User Study
-                    </Typography>
-                </Toolbar>
-                <main>
-                    {getContent(page.num, classes)}
-                </main>
-                <Button
-                    variant="contained"
-                    href="#contained-buttons"
-                    className={classes.button}
-                    onClick={() => page.num++}
+const IndexPage = props => (
+    <React.Fragment>
+        <div className={props.classes.layout}>
+            <Toolbar className={props.classes.toolbarMain}>
+                <Typography
+                    component={"h2"}
+                    variant={"h5"}
+                    color={"inherit"}
+                    align={"center"}
+                    noWrap
                 >
-                    <Typography variant="subtitle1" color="primary">Continue</Typography>
-                </Button>
-            </div>
-        </React.Fragment>
-    );
-};
+                    Graphical Password Scheme User Study
+                </Typography>
+            </Toolbar>
+            <main className={props.classes.main}>
+                {getContent(props.classes)}
+            </main>
+        </div>
+    </React.Fragment>
+);
 
 IndexPage.propTypes = {
     classes: PropTypes.object.isRequired,
