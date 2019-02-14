@@ -1,5 +1,7 @@
 import vault from '../vault'
 
-export const nextPage = () => {
+const nextPage = () => {
     vault.page++
 };
+
+export default nextPage;

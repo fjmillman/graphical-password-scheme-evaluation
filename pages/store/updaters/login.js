@@ -1,7 +1,7 @@
 import vault from '../vault'
 import { nextPage } from "./nextPage";
 
-export const login = () => {
+const login = () => {
     if (vault.iterations === 0) {
         nextPage();
         return;
@@ -10,3 +10,5 @@ export const login = () => {
     vault.iterations--;
     vault.isRegistration = !vault.isRegistration;
 };
+
+export default login;
