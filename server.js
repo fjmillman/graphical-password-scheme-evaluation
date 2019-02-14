@@ -1,14 +1,11 @@
 const express = require('express');
 const body = require('body-parser');
 const next = require('next');
-const connect = require('./server/db.js');
 const userStudyResult = require("./server/controllers/userStudyResultController");
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-
-connect();
 
 app.prepare().then(() => {
     const server = express();

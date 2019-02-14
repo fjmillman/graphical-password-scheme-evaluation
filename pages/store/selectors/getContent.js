@@ -10,7 +10,7 @@ import Complete from '../../components/Complete'
 import Error from '../../components/Error'
 import vault from '../vault'
 
-const getContent = (classes) => {
+export const getContent = (classes) => {
     switch (vault.page) {
         case 0:
             return <Welcome classes={classes}/>;
@@ -38,5 +38,3 @@ const getContent = (classes) => {
             return <Error classes={classes}/>
     }
 };
-
-export default getContent;

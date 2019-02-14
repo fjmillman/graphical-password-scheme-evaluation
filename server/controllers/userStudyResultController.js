@@ -1,6 +1,9 @@
 const UserStudyResult = require('../models/UserStudyResult');
+const connect = require('../db.js');
 
 const userStudyResult = (req, res, next) => {
+    connect();
+
     const newUserStudyResult = new UserStudyResult({
         username: req.body.username,
         password: req.body.password
