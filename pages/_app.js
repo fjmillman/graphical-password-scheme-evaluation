@@ -11,7 +11,7 @@ export default class EvaluationApp extends App {
             props = await Component.getInitialProps(req);
         }
 
-        return {props};
+        return { props };
     }
 
     render() {

@@ -46,7 +46,7 @@ const IndexPage = props => (
                 </Typography>
             </Toolbar>
             <main className={props.classes.main}>
-                {getContent(props.classes)}
+                {getContent(props)}
             </main>
         </div>
     </React.Fragment>

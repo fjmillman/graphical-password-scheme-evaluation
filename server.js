@@ -7,6 +7,10 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+if (process.env.NODE_ENV !== 'production') {
+    require('now-env');
+}
+
 app.prepare().then(() => {
     const server = express();
     server.use(body.urlencoded({
@@ -15,7 +19,8 @@ app.prepare().then(() => {
     server.use(body.json());
     server.post('/userStudyResult', userStudyResult);
     server.get('*', (req, res) => {
-        return handle(req, res)
+        req.path = process.env.PATH;
+        return handle(req, res);
     });
     server.listen(3000, err => {
         if (err) throw err;

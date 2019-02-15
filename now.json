@@ -5,7 +5,8 @@
     { "src": "server.js", "use": "@now/node" }
   ],
   "env": {
-    "MONGODB_URI": "@mongodb-uri"
+    "MONGODB_URI": "@mongodb-uri",
+    "PATH": "@path"
   },
   "alias": ["gpa-evaluation"]
 }
