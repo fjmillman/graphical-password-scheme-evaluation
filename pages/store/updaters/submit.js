@@ -3,7 +3,7 @@ import vault from '../../store/vault'
 import { nextPage } from "./nextPage";
 
 export const submit = async () => {
-    await axios.post(`${vault.rootUrl}/userStudyResult`, vault.result || {})
+    await axios.post(`/userStudyResult`, vault.result || {})
         .then(() => console.log('Results uploaded to the database'))
         .catch(error => console.error(error.stack));
 
