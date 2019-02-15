@@ -1,10 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@now/next" }
+    { "src": "package.json", "use": "@now/next" },
+    { "src": "server.js", "use": "@now/node" }
   ],
   "routes":[
-    {"src": "/result", "dest": "/server/controllers/userStudyResultController.js"}
+    {"src": "/result",  "methods": ["POST"], "dest": "/server/controllers/userStudyResultController.js"}
   ],
   "env": {
     "MONGODB_URI": "@mongodb-uri"
