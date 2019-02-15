@@ -4,7 +4,7 @@
     { "src": "package.json", "use": "@now/next" }
   ],
   "routes":[
-    {"src": "/result", "dest": "server/controllers/userStudyResultController.js"}
+    {"src": "/result", "dest": "/server/controllers/userStudyResultController.js"}
   ],
   "env": {
     "MONGODB_URI": "@mongodb-uri"
