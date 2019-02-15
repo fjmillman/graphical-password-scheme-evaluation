@@ -1,8 +1,7 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@now/next" },
-    { "src": "server.js", "use": "@now/node" }
+    { "src": "package.json", "use": "@now/next" }
   ],
   "routes":[
     {"src": "/result", "dest": "server/controllers/userStudyResultController.js"}

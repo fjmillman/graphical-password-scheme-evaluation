@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "node server",
     "build": "next build",
-    "start": "NODE_ENV=production node server",
+    "start": "next start",
     "now-build": "next build"
   },
   "devDependencies": {
