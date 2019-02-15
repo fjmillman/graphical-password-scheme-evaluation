@@ -13,7 +13,7 @@ app.prepare().then(() => {
         extended: true
     }));
     server.use(body.json());
-    server.post('/userStudyResult', userStudyResult);
+    server.post('/result', userStudyResult);
     server.get('*', (req, res) => {
         return handle(req, res);
     });
