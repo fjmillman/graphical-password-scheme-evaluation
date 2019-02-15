@@ -4,6 +4,9 @@
     { "src": "package.json", "use": "@now/next" },
     { "src": "server.js", "use": "@now/node" }
   ],
+  "routes":[
+    {"src": "/result", "dest": "server/controllers/userStudyResultController.js"}
+  ],
   "env": {
     "MONGODB_URI": "@mongodb-uri"
   },

@@ -7,10 +7,6 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-if (process.env.NODE_ENV !== 'production') {
-    require('now-env');
-}
-
 app.prepare().then(() => {
     const server = express();
     server.use(body.urlencoded({
