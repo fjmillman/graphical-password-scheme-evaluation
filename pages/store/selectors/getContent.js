@@ -11,8 +11,6 @@ import Error from '../../components/Error'
 import vault from '../vault'
 
 export const getContent = props => {
-    vault.path = props.path;
-
     switch (vault.page) {
         case 0:
             return <Welcome classes={props.classes}/>;

@@ -6,7 +6,7 @@
   ],
   "env": {
     "MONGODB_URI": "@mongodb-uri",
-    "PATH": "@path"
+    "ROOT_URL": "@root-url"
   },
   "alias": ["gpa-evaluation"]
 }

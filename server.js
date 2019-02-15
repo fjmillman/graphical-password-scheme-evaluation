@@ -19,7 +19,6 @@ app.prepare().then(() => {
     server.use(body.json());
     server.post('/userStudyResult', userStudyResult);
     server.get('*', (req, res) => {
-        req.path = process.env.PATH;
         return handle(req, res);
     });
     server.listen(3000, err => {
