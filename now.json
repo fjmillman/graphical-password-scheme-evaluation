@@ -2,10 +2,10 @@
   "version": 2,
   "builds": [
     { "src": "next.config.js", "use": "@now/next" },
-    { "src": "server.js", "use": "@now/node" }
+    { "src": "server.js", "use": "@now/node-server" }
   ],
   "routes": [
-    { "src": "/result", "dest": "server.js" }
+    { "src": "/result", "dest": "/server.js" }
   ],
   "env": {
     "MONGODB_URI": "@mongodb-uri"
