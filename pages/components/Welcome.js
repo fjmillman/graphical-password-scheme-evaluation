@@ -15,7 +15,6 @@ const Welcome = props => (
         </Typography>
         <Button
             variant="contained"
-            href="#contained-buttons"
             className={props.classes.button}
             onClick={nextPage}
         >
