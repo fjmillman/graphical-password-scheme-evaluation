@@ -14,9 +14,6 @@
     "react-easy-state": "^6.1.0",
     "react-player": "^1.9.3"
   },
-  "resolutions": {
-    "terser": "3.14.1"
-  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
