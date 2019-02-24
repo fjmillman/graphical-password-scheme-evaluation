@@ -8,10 +8,10 @@ import Guess from '../../components/Guess'
 import Debrief from '../../components/Debrief'
 import Complete from '../../components/Complete'
 import Error from '../../components/Error'
-import vault from '../vault'
+import state from '../state'
 
 export const getContent = props => {
-    switch (vault.page) {
+    switch (state.page) {
         case 0:
             return <Welcome classes={props.classes}/>;
         case 1:

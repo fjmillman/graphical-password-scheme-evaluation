@@ -1,7 +1,11 @@
 import React from 'react'
+import PropTypes from "prop-types";
+import { view } from 'react-easy-state';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
-import { nextPage } from "../store/updaters/nextPage";
+import PassIconGrid from "./PassIconGrid";
+import { getPassIcons } from "../store/selectors/getPassIcons";
+import { guess } from "../store/updaters/guess";
 
 const Guess = props => (
     <React.Fragment>
@@ -12,11 +16,11 @@ const Guess = props => (
         >
             Make a guess
         </Typography>
+        <PassIconGrid passIcons={getPassIcons()}/>
         <Button
             variant="contained"
-            href="#contained-buttons"
             className={props.classes.button}
-            onClick={nextPage}
+            onClick={guess}
         >
             <Typography
                 variant="subtitle1"
@@ -28,4 +32,8 @@ const Guess = props => (
     </React.Fragment>
 );
 
-export default Guess
+Guess.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default view(Guess)

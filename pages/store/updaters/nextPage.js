@@ -1,5 +1,5 @@
-import vault from '../vault'
+import state from '../state'
 
 export const nextPage = () => {
-    vault.page++
+    state.page++
 };

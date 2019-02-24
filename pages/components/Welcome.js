@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types";
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
 import { nextPage } from "../store/updaters/nextPage";
@@ -27,5 +28,9 @@ const Welcome = props => (
         </Button>
     </React.Fragment>
 );
+
+Welcome.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default Welcome

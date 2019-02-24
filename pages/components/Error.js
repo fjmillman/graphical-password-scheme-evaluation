@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types";
 import Typography from '@material-ui/core/Typography';
 
 const Error = props => (
@@ -10,5 +11,9 @@ const Error = props => (
         Error: You shouldn't be here
     </Typography>
 );
+
+Error.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default Error

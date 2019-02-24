@@ -1,12 +1,12 @@
-import vault from '../vault'
+import state from '../state'
 import { nextPage } from "./nextPage";
 
 export const login = () => {
-    if (vault.iterations === 0) {
+    if (state.iterations === 0) {
         nextPage();
         return;
     }
 
-    vault.iterations--;
-    vault.isRegistration = !vault.isRegistration;
+    state.iterations--;
+    state.isRegistration = !state.isRegistration;
 };

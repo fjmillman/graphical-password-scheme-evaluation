@@ -1,31 +1,34 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
-import Button from "@material-ui/core/Button";
+import YouTubePlayer from 'react-player/lib/players/YouTube'
+import { getObservation } from "../store/selectors/getObservation";
 import { nextPage } from "../store/updaters/nextPage";
 
-const Authentication = (props) => (
-    <React.Fragment>
-        <Typography
-            component={"p"}
-            align={"center"}
-            className={props.classes.text}
-        >
-            Watch this video
-        </Typography>
-        <Button
-            variant="contained"
-            href="#contained-buttons"
-            className={props.classes.button}
-            onClick={nextPage}
-        >
-            <Typography
-                variant="subtitle1"
-                color="primary"
-            >
-                Next
-            </Typography>
-        </Button>
-    </React.Fragment>
-);
+const Observation = props => {
+    const url = getObservation();
 
-export default Authentication
+    return (
+        <React.Fragment>
+            <Typography
+                component={"p"}
+                align={"center"}
+                className={props.classes.text}
+            >
+                Watch this video
+            </Typography>
+            <YouTubePlayer
+                url={url}
+                onEnded={nextPage}
+                playing
+                muted
+            />
+        </React.Fragment>
+    );
+};
+
+Observation.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default Observation

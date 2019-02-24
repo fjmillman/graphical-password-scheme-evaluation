@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from "prop-types";
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
-import {nextPage} from "../store/updaters/nextPage";
+import { nextPage } from "../store/updaters/nextPage";
 
 const Brief = props => (
     <React.Fragment>
@@ -27,5 +28,9 @@ const Brief = props => (
         </Button>
     </React.Fragment>
 );
+
+Brief.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default Brief

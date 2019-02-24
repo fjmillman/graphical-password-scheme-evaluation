@@ -1,8 +1,5 @@
-import vault from '../vault'
+import state from '../state'
 
 export const register = () => {
-    vault.result.username = 'fjmillman';
-    vault.result.password = 'hello';
-
-    vault.isRegistration = !vault.isRegistration;
+    state.isRegistration = !state.isRegistration;
 };

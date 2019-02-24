@@ -1,13 +1,14 @@
 import { store } from "react-easy-state";
 
-const vault = store({
+const state = store({
     page: 0,
     isRegistration: 1,
     iterations: 5,
+    observation: 1,
+    selected: [],
     result: {
-        username: "",
-        password: ""
+        guesses: []
     }
 });
 
-export default vault;
+export default state;

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types";
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
 import { register } from "../store/updaters/register";
@@ -27,5 +28,9 @@ const Register = props => (
         </Button>
     </React.Fragment>
 );
+
+Register.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default Register

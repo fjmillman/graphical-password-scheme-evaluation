@@ -1,7 +1,7 @@
 const express = require('express');
 const body = require('body-parser');
 const next = require('next');
-const userStudyResult = require("./server/controllers/userStudyResultController");
+const result = require("./server/controllers/ResultController");
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -13,7 +13,7 @@ app.prepare().then(() => {
         extended: true
     }));
     server.use(body.json());
-    server.post('/result', userStudyResult);
+    server.post('/result', result);
     server.get('*', (req, res) => {
         return handle(req, res);
     });
