@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import YouTubePlayer from 'react-player/lib/players/YouTube'
@@ -31,4 +31,4 @@ Observation.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default Observation
+export default Observation;

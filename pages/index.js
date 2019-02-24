@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { view } from 'react-easy-state'
+import Content from './components/Content';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import { getContent } from './store/selectors/getContent';
 
 const styles = theme => ({
     layout: {
@@ -46,7 +46,7 @@ const IndexPage = props => (
                 </Typography>
             </Toolbar>
             <main className={props.classes.main}>
-                {getContent(props)}
+                <Content classes={props.classes}/>
             </main>
         </div>
     </React.Fragment>

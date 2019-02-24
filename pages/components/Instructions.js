@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from "prop-types";
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
@@ -33,4 +33,4 @@ Instructions.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default Instructions
+export default Instructions;

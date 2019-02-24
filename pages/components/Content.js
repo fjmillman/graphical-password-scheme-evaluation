@@ -1,17 +1,19 @@
 import React from 'react';
-import Welcome from '../../components/Welcome'
-import Brief from '../../components/Brief'
-import Instructions from '../../components/Instructions'
-import Authentication from '../../components/Authentication'
-import Observation from '../../components/Observation'
-import Guess from '../../components/Guess'
-import Debrief from '../../components/Debrief'
-import Complete from '../../components/Complete'
-import Error from '../../components/Error'
-import state from '../state'
+import PropTypes from "prop-types";
+import { view } from 'react-easy-state';
+import Welcome from './Welcome';
+import Brief from './Brief';
+import Instructions from './Instructions';
+import Authentication from './Authentication';
+import Observation from './Observation';
+import Guess from './Guess';
+import Debrief from './Debrief';
+import Complete from './Complete';
+import Error from './Error';
+import { getPageNumber } from "../store/selectors/getPageNumber";
 
-export const getContent = props => {
-    switch (state.page) {
+const Content = props => {
+    switch (getPageNumber()) {
         case 0:
             return <Welcome classes={props.classes}/>;
         case 1:
@@ -35,6 +37,12 @@ export const getContent = props => {
         case 10:
             return <Complete classes={props.classes}/>;
         default:
-            return <Error classes={props.classes}/>
+            return <Error classes={props.classes}/>;
     }
 };
+
+Content.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default view(Content);

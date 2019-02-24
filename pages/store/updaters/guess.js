@@ -1,8 +1,8 @@
-import state from '../state'
+import state from '../state';
 import { nextPage } from "./nextPage";
 
-export const guess = () => {
+export function guess() {
     state.result.guesses.push(state.selected);
     state.selected = [];
     nextPage();
-};
+}

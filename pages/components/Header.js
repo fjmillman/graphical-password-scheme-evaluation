@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Head from "next/head";
 
 const Header = () => (
@@ -19,4 +19,4 @@ const Header = () => (
     </Head>
 );
 
-export default Header
+export default Header;

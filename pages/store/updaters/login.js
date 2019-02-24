@@ -1,7 +1,7 @@
-import state from '../state'
+import state from '../state';
 import { nextPage } from "./nextPage";
 
-export const login = () => {
+export function login() {
     if (state.iterations === 0) {
         nextPage();
         return;
@@ -9,4 +9,4 @@ export const login = () => {
 
     state.iterations--;
     state.isRegistration = !state.isRegistration;
-};
+}

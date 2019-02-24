@@ -24,4 +24,4 @@ export default class EvaluationApp extends App {
             </Container>
         );
     }
-}
+};

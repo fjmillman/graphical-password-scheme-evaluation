@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from "prop-types";
 import Typography from '@material-ui/core/Typography';
 
@@ -16,4 +16,4 @@ Complete.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default Complete
+export default Complete;

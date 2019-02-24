@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from "prop-types";
 import { view } from 'react-easy-state';
 import Typography from '@material-ui/core/Typography';
@@ -36,4 +36,4 @@ Guess.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default view(Guess)
+export default view(Guess);

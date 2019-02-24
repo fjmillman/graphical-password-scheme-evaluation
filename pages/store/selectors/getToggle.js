@@ -1,5 +1,5 @@
-import state from '../state'
+import state from '../state';
 
-export const getToggle = passIcon => {
+export function getToggle(passIcon) {
     return state.selected.includes(passIcon);
-};
+}

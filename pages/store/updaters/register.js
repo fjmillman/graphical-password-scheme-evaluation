@@ -1,5 +1,5 @@
-import state from '../state'
+import state from '../state';
 
-export const register = () => {
+export function register() {
     state.isRegistration = !state.isRegistration;
-};
+}

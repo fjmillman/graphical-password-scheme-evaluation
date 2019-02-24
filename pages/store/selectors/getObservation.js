@@ -1,6 +1,6 @@
 import state from '../state';
 
-export const getObservation = () => {
+export function getObservation() {
     switch(state.observation) {
         case 1:
             state.observation++;
@@ -12,4 +12,4 @@ export const getObservation = () => {
             state.observation = 1;
             return "https://www.youtu.be/P3lXKxOkxbg";
     }
-};
+}

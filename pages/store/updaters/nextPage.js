@@ -1,5 +1,5 @@
-import state from '../state'
+import state from '../state';
 
-export const nextPage = () => {
-    state.page++
-};
+export function nextPage() {
+    state.page++;
+}

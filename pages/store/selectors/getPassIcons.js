@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const getPassIcons = () => {
+export function getPassIcons() {
     return [
         'star',
         'face',
@@ -23,4 +23,4 @@ export const getPassIcons = () => {
         'all_inclusive',
         'cake'
     ];
-};
+}
