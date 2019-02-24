@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-if (process.env.NODE_ENV !== 'production') {
-    require('now-env');
+if (process.env.NODE_ENV !== "production") {
+    require("now-env");
 }
 
 const connect = () => {

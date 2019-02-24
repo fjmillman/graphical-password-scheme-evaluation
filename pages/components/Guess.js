@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
-import { view } from 'react-easy-state';
-import Typography from '@material-ui/core/Typography';
+import { view } from "react-easy-state";
+import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import PassIconGrid from "./PassIconGrid";
 import { getPassIcons } from "../store/selectors/getPassIcons";

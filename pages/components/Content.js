@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
-import { view } from 'react-easy-state';
-import Welcome from './Welcome';
-import Brief from './Brief';
-import Instructions from './Instructions';
-import Authentication from './Authentication';
-import Observation from './Observation';
-import Guess from './Guess';
-import Debrief from './Debrief';
-import Complete from './Complete';
-import Error from './Error';
+import { view } from "react-easy-state";
+import Welcome from "./Welcome";
+import Brief from "./Brief";
+import Instructions from "./Instructions";
+import Authentication from "./Authentication";
+import Observation from "./Observation";
+import Guess from "./Guess";
+import Debrief from "./Debrief";
+import Complete from "./Complete";
+import Error from "./Error";
 import { getPageNumber } from "../store/selectors/getPageNumber";
 
 const Content = props => {

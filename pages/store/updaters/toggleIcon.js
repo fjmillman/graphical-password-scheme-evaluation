@@ -1,4 +1,4 @@
-import state from '../state';
+import state from "../state";
 
 export function toggleIcon(passIcon) {
     if (state.selected.includes(passIcon)) {

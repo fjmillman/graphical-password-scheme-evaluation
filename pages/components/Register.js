@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { register } from "../store/updaters/register";
 
@@ -15,7 +15,6 @@ const Register = props => (
         </Typography>
         <Button
             variant="contained"
-            href="#contained-buttons"
             className={props.classes.button}
             onClick={register}
         >

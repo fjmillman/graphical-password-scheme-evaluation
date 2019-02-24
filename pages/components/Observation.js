@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
-import YouTubePlayer from 'react-player/lib/players/YouTube'
+import React from "react";
+import PropTypes from "prop-types";
+import Typography from "@material-ui/core/Typography";
+import YouTubePlayer from "react-player/lib/players/YouTube"
 import { getObservation } from "../store/selectors/getObservation";
 import { nextPage } from "../store/updaters/nextPage";
 

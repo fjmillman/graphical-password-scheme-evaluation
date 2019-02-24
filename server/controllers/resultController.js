@@ -1,5 +1,5 @@
-const Result = require('../models/Result');
-const connect = require('../db.js');
+const Result = require("../models/Result");
+const connect = require("../db.js");
 
 const result = (req, res, next) => {
     connect();
@@ -11,9 +11,9 @@ const result = (req, res, next) => {
     newResult
         .save()
         .then(doc => {
-            res.json(doc)
+            res.json(doc);
         })
-        .catch(e => next(e))
+        .catch(e => next(e));
 };
 
 module.exports = result;

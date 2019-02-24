@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { view } from 'react-easy-state';
-import { withStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
+import React from "react";
+import PropTypes from "prop-types";
+import { view } from "react-easy-state";
+import { withStyles } from "@material-ui/core/styles";
+import GridList from "@material-ui/core/GridList";
+import GridListTile from "@material-ui/core/GridListTile";
 import PassIcon from "./PassIcon";
 
 const styles = () => ({
     root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        overflow: 'hidden',
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-around",
+        overflow: "hidden",
     },
     gridList: {
         width: 330,
