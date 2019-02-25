@@ -1,15 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "next.config.js", "use": "@now/next" },
-    { "src": "server.js", "use": "@now/node" }
+    { "src": "next.config.js", "use": "@now/next" }
   ],
   "routes": [
-    { "src": "^/result$", "dest": "/server.js" },
     { "src": "^/(.*)$", "dest": "/$1" }
   ],
-  "env": {
-    "MONGODB_URI": "@mongodb-uri"
-  },
   "alias": ["gpa-evaluation"]
 }

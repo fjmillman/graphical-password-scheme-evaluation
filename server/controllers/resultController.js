@@ -5,6 +5,8 @@ const result = (req, res, next) => {
     connect();
 
     const newResult = new Result({
+        registrations: req.body.registrations,
+        logins: req.body.logins,
         guesses: req.body.guesses
     });
 

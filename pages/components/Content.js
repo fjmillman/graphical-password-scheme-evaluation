@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { view } from "react-easy-state";
 import Welcome from "./Welcome";
 import Brief from "./Brief";
@@ -12,37 +11,33 @@ import Complete from "./Complete";
 import Error from "./Error";
 import { getPageNumber } from "../store/selectors/getPageNumber";
 
-const Content = props => {
+const Content = () => {
     switch (getPageNumber()) {
         case 0:
-            return <Welcome classes={props.classes}/>;
+            return <Welcome/>;
         case 1:
-            return <Brief classes={props.classes}/>;
+            return <Brief/>;
         case 2:
-            return <Instructions classes={props.classes}/>;
+            return <Instructions/>;
         case 3:
-            return <Authentication classes={props.classes}/>;
+            return <Authentication/>;
         case 4:
-            return <Observation classes={props.classes}/>;
+            return <Observation url={"https://www.youtu.be/P3lXKxOkxbg"}/>;
         case 5:
-            return <Guess classes={props.classes}/>;
+            return <Guess/>;
         case 6:
-            return <Observation classes={props.classes}/>;
+            return <Observation url={"https://www.youtu.be/P3lXKxOkxbg"}/>;
         case 7:
-            return <Observation classes={props.classes}/>;
+            return <Observation url={"https://www.youtu.be/P3lXKxOkxbg"}/>;
         case 8:
-            return <Guess classes={props.classes}/>;
+            return <Guess/>;
         case 9:
-            return <Debrief classes={props.classes}/>;
+            return <Debrief/>;
         case 10:
-            return <Complete classes={props.classes}/>;
+            return <Complete/>;
         default:
-            return <Error classes={props.classes}/>;
+            return <Error/>;
     }
-};
-
-Content.propTypes = {
-    classes: PropTypes.object.isRequired,
 };
 
 export default view(Content);

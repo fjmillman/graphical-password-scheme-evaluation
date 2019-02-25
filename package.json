@@ -17,9 +17,9 @@
     "terser": "3.14.1"
   },
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start",
     "now-build": "next build"
   },
   "devDependencies": {

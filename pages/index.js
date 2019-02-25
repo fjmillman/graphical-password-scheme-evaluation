@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
 import { view } from "react-easy-state";
 import Content from "./components/Content";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
     layout: {
@@ -23,12 +23,6 @@ const styles = theme => ({
     main: {
         margin: theme.spacing.unit * 3,
     },
-    text: {
-        margin: theme.spacing.unit * 3,
-    },
-    button: {
-        margin: theme.spacing.unit,
-    },
 });
 
 const IndexPage = props => (
@@ -46,7 +40,7 @@ const IndexPage = props => (
                 </Typography>
             </Toolbar>
             <main className={props.classes.main}>
-                <Content classes={props.classes}/>
+                <Content/>
             </main>
         </div>
     </React.Fragment>

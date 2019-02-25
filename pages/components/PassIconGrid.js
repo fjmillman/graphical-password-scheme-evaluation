@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import PassIcon from "./PassIcon";
+import { getIsRegistration } from "../store/selectors/getIsRegistration";
 
 const styles = () => ({
     root: {
@@ -14,21 +15,21 @@ const styles = () => ({
         overflow: "hidden",
     },
     gridList: {
-        width: 330,
-        height: 400,
+        width: getIsRegistration ? 310 : 350,
+        height: getIsRegistration ? 400 : 560,
     }
 });
 
 const PassIconGrid = props => {
     const passIconGrid = props.passIcons.map(passIcon => (
         <GridListTile key={passIcon}>
-            <PassIcon classes={props.classes} passIcon={passIcon} />
+            <PassIcon passIcon={passIcon}/>
         </GridListTile>
     ));
 
     return (
         <div className={props.classes.root}>
-            <GridList cellHeight={75} className={props.classes.gridList} cols={4}>
+            <GridList cellHeight={75} className={props.classes.gridList} cols={props.cols}>
                 {passIconGrid}
             </GridList>
         </div>

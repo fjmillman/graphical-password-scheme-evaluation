@@ -1,8 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { nextPage } from "../store/updaters/nextPage";
+
+const styles = theme => ({
+    text: {
+        margin: theme.spacing.unit * 3,
+    },
+    button: {
+        margin: theme.spacing.unit,
+        float: "right",
+        clear: "both"
+    },
+});
 
 const Instructions = props => (
     <React.Fragment>
@@ -32,4 +44,4 @@ Instructions.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default Instructions;
+export default withStyles(styles)(Instructions);
