@@ -1,6 +1,6 @@
 import React from "react";
 import App, { Container } from "next/app";
-import Header from "./components/Header";
+import Header from "../components/Header";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 export default class EvaluationApp extends App {
