@@ -1,7 +1,22 @@
 {
-  "private": true,
-  "workspaces": [
-    "api",
-    "www"
-  ]
+  "main": "index.js",
+  "dependencies": {
+    "@material-ui/core": "^3.9.0",
+    "@material-ui/icons": "^3.0.2",
+    "axios": "^0.18.0",
+    "next": "^8.0.0-canary.18",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-easy-state": "^6.1.0",
+    "react-player": "^1.9.3"
+  },
+  "resolutions": {
+    "terser": "3.14.1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "now-build": "next build"
+  }
 }

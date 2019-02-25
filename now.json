@@ -2,11 +2,11 @@
   "version": 2,
   "builds": [
     { "src": "api/index.js", "use": "@now/node" },
-    { "src": "www/next.config.js", "use": "@now/next" }
+    { "src": "next.config.js", "use": "@now/next" }
   ],
   "routes": [
     { "src": "/api/result", "methods": ["POST"], "dest": "/api/index.js" },
-    { "src": "^/(.*)$", "dest": "/www/$1" }
+    { "src": "^/(.*)$", "dest": "/$1" }
   ],
   "alias": ["gpa-evaluation"]
 }
