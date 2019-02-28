@@ -3,9 +3,11 @@ const body = require("body-parser");
 const cors = require("cors");
 const api = require("./routes");
 
-const port = 9999;
+require("now-env");
 
 const server = express();
+const port = 9999;
+
 server.use(body.json());
 server.use(cors());
 server.use(api);
