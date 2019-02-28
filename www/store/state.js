@@ -36,7 +36,10 @@ const state = store({
     },
     valid: 0,
     result: {
-        logins: [],
+        logins: {
+            selected: [],
+            valid: []
+        },
         registrations: [],
         guesses: []
     }
