@@ -5,7 +5,10 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const connect = () => {
-    mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
+    const uri = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}` +
+        `@cluster0-tvtpt.mongodb.net/graphicalpasswordscheme?retryWrites=true`;
+
+    mongoose.connect(uri, {useNewUrlParser: true})
         .then(() => console.log("Connected to MongoDB"))
         .catch(err => console.error(err));
 };

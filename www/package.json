@@ -1,4 +1,8 @@
 {
+  "name": "graphical-password-scheme-evaluation-web",
+  "version": "1.0.0",
+  "author": "fjmillman",
+  "license": "MIT",
   "main": "index.js",
   "dependencies": {
     "@material-ui/core": "^3.9.0",
@@ -14,9 +18,6 @@
     "terser": "3.14.1"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "now-build": "next build"
+    "start": "next"
   }
 }

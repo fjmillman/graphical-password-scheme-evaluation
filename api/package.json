@@ -1,15 +1,17 @@
 {
-  "name": "api",
+  "name": "graphical-password-scheme-evaluation-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "author": "fjmillman",
+  "license": "MIT",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongoose": "^5.4.11"
   },
   "scripts": {
-    "dev": "node index.js",
-    "start": "NODE_ENV=production node index.js"
+    "start": "node server.js"
   },
   "devDependencies": {
     "now-env": "^3.1.0"

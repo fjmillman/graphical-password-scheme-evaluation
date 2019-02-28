@@ -1,7 +1,7 @@
 import { store } from "react-easy-state";
 
 const state = store({
-    page: 0,
+    page: 9,
     isRegistration: 1,
     iterations: 0,
     stage: 0,

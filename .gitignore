@@ -1,6 +1,4 @@
 now-secrets.json
-README.md
-yarn.lock
 node_modules
+yarn.lock
 .next
-.gitignore
