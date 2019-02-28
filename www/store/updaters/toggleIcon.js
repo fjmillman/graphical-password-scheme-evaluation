@@ -18,7 +18,7 @@ export function toggleIcon(passIcon) {
     } else {
         if (state.selected.includes(passIcon)) {
             state.selected.splice(state.selected.indexOf(passIcon), 1);
-        } else {
+        } else if (state.selected.length < 6) {
             state.selected.push(passIcon);
         }
     }
