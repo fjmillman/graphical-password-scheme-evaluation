@@ -12,18 +12,36 @@ const styles = () => ({
         fontSize: 48,
         color: "rgb(0, 0, 0)"
     },
+    activeIcon: {
+        background: "rgba(0, 0, 0, 0.25)"
+    },
     inactiveIcon: {
         background: "rgba(0, 0, 0, 0)"
     },
-    activeIcon: {
-        background: "rgba(0, 0, 0, 0.25)"
+    passIcon: {
+        background: "rgba(0, 0, 255, 0.25)"
+    },
+    flagIcon: {
+        background: "rgba(255, 0, 0, 0.25)"
+    },
+    skipIcon: {
+        background: "rgba(0, 255, 0, 0.25)"
     }
 });
 
 const PassIcon = props => (
     <IconButton
         onClick={() => toggleIcon(props.passIcon)}
-        className={getToggle(props.passIcon) ? props.classes.activeIcon : props.classes.inactiveIcon}
+        className={!getToggle(props.passIcon)
+            ? props.classes.inactiveIcon
+            : getToggle(props.passIcon) === "pass"
+                ? props.classes.passIcon
+                : getToggle(props.passIcon) === "flag"
+                    ? props.classes.flagIcon
+                    : getToggle(props.passIcon) === "skip"
+                        ? props.classes.skipIcon
+                        : props.classes.activeIcon
+        }
     >
         <Icon className={props.classes.icon}>{props.passIcon}</Icon>
     </IconButton>
