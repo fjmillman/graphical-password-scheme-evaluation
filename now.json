@@ -13,7 +13,7 @@
   ],
   "routes": [
     {
-      "src": "/api/result",
+      "src": "/api/(.*)",
       "dest": "/api/routes"
     },
     {
