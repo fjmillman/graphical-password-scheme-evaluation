@@ -28,7 +28,7 @@ const Guess = props => (
         >
             Make a guess
         </Typography>
-        <PassIconGrid passIcons={getPassIcons()} cols={4}/>
+        <PassIconGrid passIcons={getPassIcons()} cols={3}/>
         <Button
             variant="contained"
             className={props.classes.button}
