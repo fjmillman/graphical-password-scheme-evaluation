@@ -28,6 +28,14 @@ const state = store({
         "cake"
     ],
     currentPassIcons: [],
+    setPassIcons: [
+        "work",
+        "warning",
+        "weekend",
+        "computer",
+        "watch",
+        "headset"
+    ],
     selected: [],
     icons: {
         pass: [],
@@ -41,7 +49,10 @@ const state = store({
             valid: []
         },
         registrations: [],
-        guesses: []
+        guesses: {
+            selected: [],
+            valid: []
+        }
     }
 });
 
