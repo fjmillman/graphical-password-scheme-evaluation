@@ -19,11 +19,29 @@ const styles = theme => ({
 const Welcome = props => (
     <React.Fragment>
         <Typography
-            component={"p"}
-            align={"center"}
+            component={"h3"}
+            variant={"h5"}
             className={props.classes.text}
         >
-            Welcome to the study!
+            Welcome
+        </Typography>
+        <Typography
+            component={"p"}
+            className={props.classes.text}
+        >
+            Welcome to the graphical password authentication scheme study!
+        </Typography>
+        <Typography
+            component={"p"}
+            className={props.classes.text}
+        >
+            This study aims to measure the over-the-shoulder-attack (OSA) resistance of graphical password authentication schemes.
+        </Typography>
+        <Typography
+            component={"p"}
+            className={props.classes.text}
+        >
+            Click on the button in the lower right to begin the study.
         </Typography>
         <Button
             variant="contained"

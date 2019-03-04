@@ -14,11 +14,11 @@ const styles = theme => ({
 const Observation = props => (
     <React.Fragment>
         <Typography
-            component={"p"}
-            align={"center"}
+            component={"h3"}
+            variant={"h5"}
             className={props.classes.text}
         >
-            Watch this video
+            Observation
         </Typography>
         <YouTubePlayer
             url={props.url}

@@ -22,11 +22,11 @@ const styles = theme => ({
 const Login = props => (
     <React.Fragment>
         <Typography
-            component={"p"}
-            align={"center"}
+            component={"h3"}
+            variant={"h5"}
             className={props.classes.text}
         >
-            Login here
+            Log in
         </Typography>
         <PassIconGrid passIcons={getPassIcons()} cols={3}/>
         <Button

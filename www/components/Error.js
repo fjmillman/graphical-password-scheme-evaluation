@@ -10,13 +10,22 @@ const styles = theme => ({
 });
 
 const Error = props => (
-    <Typography
-        component={"p"}
-        align={"center"}
-        className={props.classes.text}
-    >
-        Error: You shouldn't be here
-    </Typography>
+    <React.Fragment>
+        <Typography
+            component={"h3"}
+            variant={"h5"}
+            className={props.classes.text}
+        >
+            Error
+        </Typography>
+        <Typography
+            component={"p"}
+            align={"center"}
+            className={props.classes.text}
+        >
+            Error: You shouldn't be here
+        </Typography>
+    </React.Fragment>
 );
 
 Error.propTypes = {

@@ -19,6 +19,13 @@ const styles = theme => ({
 const Instructions = props => (
     <React.Fragment>
         <Typography
+            component={"h3"}
+            variant={"h5"}
+            className={props.classes.text}
+        >
+            Instructions
+        </Typography>
+        <Typography
             component={"p"}
             align={"center"}
             className={props.classes.text}

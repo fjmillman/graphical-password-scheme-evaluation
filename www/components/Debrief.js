@@ -19,11 +19,11 @@ const styles = theme => ({
 const Debrief = props => (
     <React.Fragment>
         <Typography
-            component={"p"}
-            align={"center"}
+            component={"h3"}
+            variant={"h5"}
             className={props.classes.text}
         >
-            Here is the Debrief!
+            Debrief
         </Typography>
         <Button
             variant="contained"

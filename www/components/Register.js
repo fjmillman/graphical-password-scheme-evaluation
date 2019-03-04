@@ -22,11 +22,11 @@ const styles = theme => ({
 const Register = props => (
     <React.Fragment>
         <Typography
-            component={"p"}
-            align={"center"}
+            component={"h3"}
+            variant={"h5"}
             className={props.classes.text}
         >
-            Register here
+            Registration
         </Typography>
         <PassIconGrid passIcons={getPassIcons()} cols={4}/>
         <Button

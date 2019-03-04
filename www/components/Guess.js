@@ -22,11 +22,11 @@ const styles = theme => ({
 const Guess = props => (
     <React.Fragment>
         <Typography
-            component={"p"}
-            align={"center"}
+            component={"h3"}
+            variant={"h5"}
             className={props.classes.text}
         >
-            Make a guess
+            Guess
         </Typography>
         <PassIconGrid passIcons={getPassIcons()} cols={3}/>
         <Button
