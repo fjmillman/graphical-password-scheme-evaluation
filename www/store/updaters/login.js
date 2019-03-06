@@ -1,6 +1,7 @@
 import state from "../state";
 import { nextPage } from "./nextPage";
 import { isValid } from "../selectors/isValid";
+import { getRandomStage } from "../selectors/getRandomStage";
 
 export function login() {
     if (state.selected.length !== 6) {
@@ -16,22 +17,21 @@ export function login() {
     if (state.stage < 2) {
         state.stage++;
         state.selected = [];
-        state.currentPassIcons = [...state.passIcons].sort(() => 0.5 - Math.random()).slice(0, 12);
+        state.currentPassIcons = getRandomStage();
         return;
     }
 
     state.result.logins.valid.push(state.valid);
-
     state.iterations++;
     state.stage = 0;
     state.valid = 0;
+    state.pastStages = [];
     state.selected = [];
     state.icons = {
         pass: [],
         skip: [],
         flag: [],
     };
-    state.isRegistration = !state.isRegistration;
 
     if (state.iterations === 1) {
         nextPage();

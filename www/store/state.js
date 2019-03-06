@@ -5,6 +5,7 @@ const state = store({
     isRegistration: 1,
     iterations: 0,
     stage: 0,
+    pastStages: [],
     passIcons: [
         "star",
         "face",

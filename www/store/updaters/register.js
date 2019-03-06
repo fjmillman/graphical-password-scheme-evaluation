@@ -1,7 +1,8 @@
 import state from "../state";
+import { getRandomStage } from "../selectors/getRandomStage";
 
 export function register() {
     state.result.registrations.push(state.icons);
     state.isRegistration = !state.isRegistration;
-    state.currentPassIcons = [...state.passIcons].sort(() => 0.5 - Math.random()).slice(0, 12);
+    state.currentPassIcons = getRandomStage();
 }
