@@ -29,7 +29,11 @@ const PassIconGrid = props => {
 
     return (
         <div className={props.classes.root}>
-            <GridList cellHeight={75} className={props.classes.gridList} cols={props.cols}>
+            <GridList
+                cellHeight={75}
+                className={props.classes.gridList}
+                cols={props.cols}
+            >
                 {passIconGrid}
             </GridList>
         </div>
