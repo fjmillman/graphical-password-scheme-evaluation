@@ -11,12 +11,16 @@ const styles = () => ({
     root: {
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-around",
+        justifyContent: "center",
         overflow: "hidden",
     },
-    gridList: {
-        width: getIsRegistration ? 310 : 350,
-        height: getIsRegistration ? 400 : 560,
+    registrationGridList: {
+        width: 250,
+        height: 550,
+    },
+    loginGridList: {
+        width: 250,
+        height: 350,
     }
 });
 
@@ -31,8 +35,8 @@ const PassIconGrid = props => {
         <div className={props.classes.root}>
             <GridList
                 cellHeight={75}
-                className={props.classes.gridList}
-                cols={props.cols}
+                className={getIsRegistration() ? props.classes.registrationGridList : props.classes.loginGridList}
+                cols={3}
             >
                 {passIconGrid}
             </GridList>

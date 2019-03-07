@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import { login } from "../store/updaters/login";
 import { getPassIcons } from "../store/selectors/getPassIcons";
 import PassIconGrid from "./PassIconGrid";
+import { getCurrentStage } from "../store/selectors/getCurrentStage";
 
 const styles = theme => ({
     text: {
@@ -14,6 +15,7 @@ const styles = theme => ({
     },
     button: {
         margin: theme.spacing.unit,
+        marginTop: theme.spacing.unit * 5,
         float: "right",
         clear: "both"
     },
@@ -28,7 +30,14 @@ const Login = props => (
         >
             Log in
         </Typography>
-        <PassIconGrid passIcons={getPassIcons()} cols={3}/>
+        <Typography
+            component={"p"}
+            align={"center"}
+            className={props.classes.text}
+        >
+            Stage {getCurrentStage()} of 3
+        </Typography>
+        <PassIconGrid passIcons={getPassIcons()}/>
         <Button
             variant="contained"
             className={props.classes.button}

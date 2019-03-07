@@ -10,6 +10,8 @@ import Debrief from "./Debrief";
 import Complete from "./Complete";
 import Error from "./Error";
 import { getPageNumber } from "../store/selectors/getPageNumber";
+import { getScheme } from "../store/selectors/getScheme";
+import { getUrl } from "../store/selectors/getUrl";
 
 const Content = () => {
     switch (getPageNumber()) {
@@ -18,22 +20,36 @@ const Content = () => {
         case 1:
             return <Brief/>;
         case 2:
-            return <Instructions/>;
+            return <Instructions scheme={getScheme()}/>;
         case 3:
-            return <Authentication/>;
+            return <Authentication scheme={getScheme()}/>;
         case 4:
-            return <Observation url={"https://www.youtu.be/P3lXKxOkxbg"}/>;
+            return <Observation url={getUrl(1)}/>;
         case 5:
             return <Guess/>;
         case 6:
-            return <Observation url={"https://www.youtu.be/P3lXKxOkxbg"}/>;
+            return <Observation url={getUrl(2)}/>;
         case 7:
-            return <Observation url={"https://www.youtu.be/P3lXKxOkxbg"}/>;
+            return <Observation url={getUrl(3)}/>;
         case 8:
             return <Guess/>;
         case 9:
-            return <Debrief/>;
+            return <Instructions scheme={getScheme()}/>;
         case 10:
+            return <Authentication scheme={getScheme()}/>;
+        case 11:
+            return <Observation url={getUrl(1)}/>;
+        case 12:
+            return <Guess/>;
+        case 13:
+            return <Observation url={getUrl(2)}/>;
+        case 14:
+            return <Observation url={getUrl(3)}/>;
+        case 15:
+            return <Guess/>;
+        case 16:
+            return <Debrief/>;
+        case 17:
             return <Complete/>;
         default:
             return <Error/>;

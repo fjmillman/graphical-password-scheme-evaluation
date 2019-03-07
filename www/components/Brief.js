@@ -14,6 +14,7 @@ const styles = theme => ({
     },
     button: {
         margin: theme.spacing.unit,
+        marginTop: theme.spacing.unit * 5,
         float: "right",
         clear: "both"
     },
@@ -32,60 +33,41 @@ const Brief = props => (
             component={"p"}
             className={props.classes.text}
         >
-            You will be presented with a pairs of prototypes based on its corresponding graphical password scheme and you will run through the following steps in order for each prototype:
-        </Typography>
-        <List
-            component={"ol"}
-            disablePadding={true}
-            dense={true}>
-            <ListItem>
-                <ListItemText
-                    inset={true}
-                    primary="1) Read through the instructions for use"
-                />
-            </ListItem>
-            <ListItem>
-                <ListItemText
-                    inset={true}
-                    primary="2) Attempt to authenticate (register and login) 10 times"
-                />
-            </ListItem>
-            <ListItem>
-                <ListItemText
-                    inset={true}
-                    primary="3) Observe a clip of the researcher logging in"
-                />
-            </ListItem>
-            <ListItem>
-                <ListItemText
-                    inset={true}
-                    primary="4) Guess the password after the first observation"
-                />
-            </ListItem>
-            <ListItem>
-                <ListItemText
-                    inset={true}
-                    primary="5) Observe 2 more clips of the researcher logging in"
-                />
-            </ListItem>
-            <ListItem>
-                <ListItemText
-                    inset={true}
-                    primary="6) Guess the password after the third and final observation"
-                />
-            </ListItem>
-        </List>
-        <Typography
-            component={"p"}
-            className={props.classes.text}
-        >
-            In the final stage you will be able to submit your test results and complete the study.
+            You will be presented with a pair of prototypes based on its corresponding graphical password scheme
+            and you will run through the following steps in order for each prototype:
+            <List disablePadding={true} dense={true}>
+                <ListItem>
+                    <ListItemText primary="1) Read through the instructions for use"/>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="2) Attempt to authenticate (register and login) 10 times"/>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="3) Observe a clip of the researcher logging in"/>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="4) Guess the password after the first observation"/>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="5) Observe 2 more clips of the researcher logging in"/>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="6) Guess the password after the third and final observation"/>
+                </ListItem>
+            </List>
         </Typography>
         <Typography
             component={"p"}
             className={props.classes.text}
         >
-            Click on the button in the lower right to accept and begin the study.
+            After completing this study, you will be asked to provide your age and gender before submitting your
+            results.
+        </Typography>
+        <Typography
+            component={"p"}
+            className={props.classes.text}
+        >
+            Click on the button to begin the study.
         </Typography>
         <Button
             variant="contained"
@@ -96,7 +78,7 @@ const Brief = props => (
                 variant="subtitle1"
                 color="primary"
             >
-                I Accept
+                Begin
             </Typography>
         </Button>
     </React.Fragment>

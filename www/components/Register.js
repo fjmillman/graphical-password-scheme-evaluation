@@ -14,6 +14,7 @@ const styles = theme => ({
     },
     button: {
         margin: theme.spacing.unit,
+        marginTop: theme.spacing.unit * 5,
         float: "right",
         clear: "both"
     },
@@ -28,7 +29,14 @@ const Register = props => (
         >
             Registration
         </Typography>
-        <PassIconGrid passIcons={getPassIcons()} cols={4}/>
+        <Typography
+            component={"p"}
+            align={"center"}
+            className={props.classes.text}
+        >
+            Select 6 pass objects, 3 flag objects, and 3 skipping objects
+        </Typography>
+        <PassIconGrid passIcons={getPassIcons()}/>
         <Button
             variant="contained"
             className={props.classes.button}

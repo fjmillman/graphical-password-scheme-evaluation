@@ -5,6 +5,8 @@ import { view } from "react-easy-state";
 import Content from "../components/Content";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import LinearProgress from "@material-ui/core/LinearProgress";
+import { getProgress } from "../store/selectors/getProgress";
 
 const styles = theme => ({
     layout: {
@@ -17,18 +19,16 @@ const styles = theme => ({
             marginRight: "auto",
         },
     },
-    toolbarMain: {
-        borderBottom: `1px solid ${theme.palette.grey[300]}`,
-    },
     main: {
         margin: theme.spacing.unit * 3,
+        marginTop: theme.spacing.unit * 5,
     },
 });
 
 const IndexPage = props => (
     <React.Fragment>
         <div className={props.classes.layout}>
-            <Toolbar className={props.classes.toolbarMain}>
+            <Toolbar>
                 <Typography
                     component={"h2"}
                     variant={"h5"}
@@ -39,6 +39,11 @@ const IndexPage = props => (
                     Graphical Password Scheme User Study
                 </Typography>
             </Toolbar>
+            <LinearProgress
+                color="secondary"
+                variant="determinate"
+                value={getProgress()}
+            />
             <main className={props.classes.main}>
                 <Content/>
             </main>

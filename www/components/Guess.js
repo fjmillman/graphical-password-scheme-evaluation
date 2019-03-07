@@ -14,6 +14,7 @@ const styles = theme => ({
     },
     button: {
         margin: theme.spacing.unit,
+        marginTop: theme.spacing.unit * 5,
         float: "right",
         clear: "both"
     },
@@ -28,7 +29,14 @@ const Guess = props => (
         >
             Guess
         </Typography>
-        <PassIconGrid passIcons={getPassIcons()} cols={3}/>
+        <Typography
+            component={"p"}
+            align={"center"}
+            className={props.classes.text}
+        >
+            Make a guess on what you think the password is based on the previous observation
+        </Typography>
+        <PassIconGrid passIcons={getPassIcons()}/>
         <Button
             variant="contained"
             className={props.classes.button}

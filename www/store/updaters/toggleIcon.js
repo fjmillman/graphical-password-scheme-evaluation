@@ -1,7 +1,7 @@
 import state from "../state";
 
 export function toggleIcon(passIcon) {
-    if (state.page === 3 && state.isRegistration) {
+    if ((state.page === 3 || state.page === 10) && state.isRegistration) {
         if (state.icons.pass.includes(passIcon)) {
             state.icons.pass.splice(state.icons.pass.indexOf(passIcon), 1);
         } else if (state.icons.flag.includes(passIcon)) {

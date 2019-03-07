@@ -9,6 +9,10 @@ const styles = theme => ({
     text: {
         margin: theme.spacing.unit * 3,
     },
+    video: {
+        display: "flex",
+        justifyContent: "center"
+    }
 });
 
 const Observation = props => (
@@ -20,12 +24,21 @@ const Observation = props => (
         >
             Observation
         </Typography>
-        <YouTubePlayer
-            url={props.url}
-            onEnded={nextPage}
-            playing
-            muted
-        />
+        <Typography
+            component={"p"}
+            align={"center"}
+            className={props.classes.text}
+        >
+            Watch the following video
+        </Typography>
+        <div className={props.classes.video}>
+            <YouTubePlayer
+                url={props.url}
+                onEnded={nextPage}
+                playing
+                muted
+            />
+        </div>
     </React.Fragment>
 );
 

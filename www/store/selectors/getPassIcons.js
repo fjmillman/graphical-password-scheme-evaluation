@@ -2,7 +2,7 @@ import React from "react";
 import state from "../state";
 
 export function getPassIcons() {
-    if (!state.isRegistration) {
+    if (state.isLogin) {
         return state.currentPassIcons;
     }
 

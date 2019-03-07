@@ -1,13 +1,14 @@
 const Result = require("../models/Result");
 const connect = require("../db.js");
 
-const ResultController = (req, res, next) => {
+const ResultPostController = (req, res, next) => {
     connect();
 
     const newResult = new Result({
-        registrations: req.body.registrations,
-        logins: req.body.logins,
-        guesses: req.body.guesses
+        scheme1: req.body.scheme1,
+        scheme2: req.body.scheme2,
+        age: req.body.age,
+        gender: req.body.gender
     });
 
     newResult
@@ -18,4 +19,4 @@ const ResultController = (req, res, next) => {
         .catch(e => next(e));
 };
 
-module.exports = ResultController;
+module.exports = ResultPostController;

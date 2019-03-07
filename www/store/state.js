@@ -2,7 +2,10 @@ import { store } from "react-easy-state";
 
 const state = store({
     page: 0,
+    scheme: 1,
+    startTime: 0,
     isRegistration: 1,
+    isLogin: 0,
     iterations: 0,
     stage: 0,
     pastStages: [],
@@ -26,7 +29,8 @@ const state = store({
         "ac_unit",
         "beach_access",
         "all_inclusive",
-        "cake"
+        "cake",
+        "email"
     ],
     currentPassIcons: [],
     setPassIcons: [
@@ -43,18 +47,21 @@ const state = store({
         skip: [],
         flag: []
     },
-    valid: 0,
+    authentication: {
+        registration: {},
+        logins: []
+    },
+    schemeResult: {
+        authentications: [],
+        guesses: []
+    },
     result: {
-        logins: {
-            selected: [],
-            valid: []
-        },
-        registrations: [],
-        guesses: {
-            selected: [],
-            valid: []
-        }
-    }
+        scheme1: {},
+        scheme2: {},
+        age: "",
+        gender: ""
+    },
+    formError: false
 });
 
 export default state;

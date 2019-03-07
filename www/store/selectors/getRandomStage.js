@@ -1,14 +1,8 @@
 import state from "../state";
-
-const getRandomPassIcons = () => [...state.passIcons].sort(() => 0.5 - Math.random()).slice(0, 12);
-
-const isRuleOne = passIcons => state.icons.flag.some(flag => passIcons.includes(flag)) &&
-    !state.icons.skip.some(skip => passIcons.includes(skip)) &&
-    state.icons.pass.filter(pass => passIcons.includes(pass)).length >= 1;
-const isRuleTwo = passIcons => state.icons.skip.some(skip => passIcons.includes(skip)) &&
-    state.icons.pass.filter(pass => passIcons.includes(pass)).length >= 5;
-const isRuleThree = passIcons => !state.icons.flag.some(flag => passIcons.includes(flag)) &&
-    !state.icons.skip.some(skip => passIcons.includes(skip));
+import { isRuleOne } from "./isRuleOne";
+import { isRuleTwo } from "./isRuleTwo";
+import { isRuleThree } from "./isRuleThree";
+import { getRandomPassIcons } from "./getRandomPassIcons";
 
 export function getRandomStage() {
     const remainingStages = [...Array(3).keys()]
