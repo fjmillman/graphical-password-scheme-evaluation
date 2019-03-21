@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint",
-    "prettier": "prettier '{,!(node_modules)/}**/*.js' --write",
+    "prettier": "prettier './**/*.js' --write",
     "lint-staged": "lint-staged"
   },
   "pre-commit": "lint-staged",
