@@ -1,13 +1,15 @@
-const Result = require("../models/Result");
-const connect = require("../db.js");
+const Result = require('../models/Result');
+const connect = require('../db.js');
 
-const ResultGetController = (req, res, next) => {
-    connect();
+const ResultGetController = async (req, res, next) => {
+  connect();
 
-    Result.find(function (error, results) {
-        if (error) next(error);
-        res.json(results.length);
-    });
+  try {
+    const results = await Result.find({});
+    res.json(results.length);
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports = ResultGetController;

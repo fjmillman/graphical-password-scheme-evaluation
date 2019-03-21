@@ -9,9 +9,9 @@ import Guess from './Guess';
 import Debrief from './Debrief';
 import Complete from './Complete';
 import Error from './Error';
-import { getPageNumber } from '../store/selectors/getPageNumber';
-import { getScheme } from '../store/selectors/getScheme';
-import { getUrl } from '../store/selectors/getUrl';
+import getPageNumber from '../store/selectors/getPageNumber';
+import getScheme from '../store/selectors/getScheme';
+import getUrl from '../store/selectors/getUrl';
 
 const Content = () => {
   switch (getPageNumber()) {

@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import { view } from 'react-easy-state';
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
-import { getIsRegistration } from '../store/selectors/getIsRegistration';
+import getIsRegistration from '../store/selectors/getIsRegistration';
 import PassIcon from './PassIcon';
 
 const styles = () => ({
@@ -12,33 +12,33 @@ const styles = () => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   registrationGridList: {
     width: 250,
-    height: 550
+    height: 550,
   },
   loginGridList: {
     width: 250,
-    height: 350
-  }
+    height: 350,
+  },
 });
 
-const PassIconSelect = props => {
-  const passIconGrid = props.passIcons.map(passIcon => (
+const PassIconSelect = ({ classes, passIcons }) => {
+  const passIconGrid = passIcons.map(passIcon => (
     <GridListTile key={passIcon}>
       <PassIcon passIcon={passIcon} />
     </GridListTile>
   ));
 
   return (
-    <div className={props.classes.root}>
+    <div className={classes.root}>
       <GridList
         cellHeight={75}
         className={
           getIsRegistration()
-            ? props.classes.registrationGridList
-            : props.classes.loginGridList
+            ? classes.registrationGridList
+            : classes.loginGridList
         }
         cols={3}
       >
@@ -49,8 +49,8 @@ const PassIconSelect = props => {
 };
 
 PassIconSelect.propTypes = {
-  classes: PropTypes.object.isRequired,
-  passIcons: PropTypes.object.isRequired
+  classes: PropTypes.objectOf(PropTypes.string),
+  passIcons: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default withStyles(styles)(view(PassIconSelect));

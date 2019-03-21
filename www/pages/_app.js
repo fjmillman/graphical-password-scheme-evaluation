@@ -1,7 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
-import Header from '../components/Header';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Header from '../components/Header';
 
 export default class EvaluationApp extends App {
   static async getInitialProps({ Component, req }) {

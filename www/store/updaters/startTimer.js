@@ -1,5 +1,5 @@
-import state from "../state";
+import state from '../state';
 
-export function startTimer() {
-    state.startTime = new Date();
+export default function startTimer() {
+  state.startTime = new Date();
 }

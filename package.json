@@ -1,0 +1,31 @@
+{
+  "name": "graphical-password-scheme-evaluation",
+  "description": "The graphical password scheme evaluation app",
+  "version": "1.0.0",
+  "author": "Freddie John Millman <freddie.millman@icloud.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint",
+    "prettier": "prettier '{,!(node_modules)/}**/*.js' --write",
+    "lint-staged": "lint-staged"
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "lint-staged": "^7.2.2",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.14.2"
+  }
+}

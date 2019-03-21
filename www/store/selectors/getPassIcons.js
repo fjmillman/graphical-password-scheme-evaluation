@@ -1,10 +1,6 @@
-import React from "react";
-import state from "../state";
+import state from '../state';
 
-export function getPassIcons() {
-    if (state.isLogin) {
-        return state.currentPassIcons;
-    }
-
-    return state.passIcons;
+export default function getPassIcons() {
+  if (state.isLogin) return state.currentPassIcons;
+  return state.passIcons;
 }

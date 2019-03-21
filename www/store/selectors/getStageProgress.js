@@ -1,5 +1,5 @@
-import state from "../state";
+import state from '../state';
 
-export function getStageProgress() {
-    return state.selected;
+export default function getStageProgress() {
+  return state.selected;
 }

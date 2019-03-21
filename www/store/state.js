@@ -31,7 +31,7 @@ const state = store({
     'beach_access',
     'all_inclusive',
     'cake',
-    'email'
+    'email',
   ],
   currentPassIcons: [],
   setPassIcons: ['work', 'warning', 'weekend', 'computer', 'watch', 'headset'],
@@ -39,23 +39,23 @@ const state = store({
   icons: {
     pass: [],
     skip: [],
-    flag: []
+    flag: [],
   },
   authentication: {
     registration: {},
-    logins: []
+    logins: [],
   },
   schemeResult: {
     authentications: [],
-    guesses: []
+    guesses: [],
   },
   result: {
     scheme1: {},
     scheme2: {},
     age: '',
-    gender: ''
+    gender: '',
   },
-  formError: false
+  formError: false,
 });
 
 export default state;

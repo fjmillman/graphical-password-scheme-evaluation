@@ -6,17 +6,7 @@
   "author": "Freddie John Millman <freddie.millman@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "start": "next",
-    "lint": "eslint",
-    "prettier": "prettier **/*.js --write",
-    "lint-staged": "lint-staged"
-  },
-  "pre-commit": "lint-staged",
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
+    "start": "next"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.0",
@@ -25,6 +15,7 @@
     "lodash": "^4.17.11",
     "next": "^8.0.0-canary.18",
     "preact": "^8.4.2",
+    "prop-types": "15.7.2",
     "react": "^16.6.3",
     "react-dnd": "^7.3.2",
     "react-dnd-html5-backend": "^7.2.0",
@@ -33,17 +24,5 @@
     "react-easy-state": "^6.1.0",
     "react-native": "^0.59.1",
     "react-player": "^1.9.3"
-  },
-  "devDependencies": {
-    "babel-eslint": "^9.0.0",
-    "eslint": "^5.6.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "4.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1",
-    "lint-staged": "^7.2.2",
-    "pre-commit": "^1.2.2",
-    "prettier": "^1.14.2"
   }
 }

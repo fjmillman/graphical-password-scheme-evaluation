@@ -1,5 +1,5 @@
-import state from "../state";
+import state from '../state';
 
-export function getIsRegistration() {
-    return state.isRegistration;
+export default function getIsRegistration() {
+  return state.isRegistration;
 }

@@ -1,5 +1,5 @@
-import state from "../state";
+import state from '../state';
 
-export function getScheme() {
-    return state.scheme;
+export default function getScheme() {
+  return state.scheme;
 }

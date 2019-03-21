@@ -1,25 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
+import flow from 'lodash/flow';
 import { view } from 'react-easy-state';
 import { withStyles } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
-import { pairIcon } from '../store/updaters/pairIcon';
 import { DragSource, DropTarget } from 'react-dnd';
-import flow from 'lodash/flow';
+import pairIcon from '../store/updaters/pairIcon';
 
 const styles = () => ({
   icon: {
     fontSize: 48,
-    color: 'rgb(0, 0, 0)'
+    color: 'rgb(0, 0, 0)',
   },
   button: {
-    display: 'inline-block'
-  }
+    display: 'inline-block',
+  },
 });
 
 const DraggablePassIcon = props => {
-  const { passIcon, classes } = props;
+  const { classes } = props;
+  const { passIcon } = props;
   const { isDragging, connectDragSource } = props;
   const { canDrop, isOver, connectDropTarget } = props;
 
@@ -35,7 +36,7 @@ const DraggablePassIcon = props => {
               opacity: isDragging ? 0.5 : 1,
               backgroundColor: isActive
                 ? 'rgba(0, 0, 0, 0.2)'
-                : 'rgba(0, 0, 0, 0)'
+                : 'rgba(0, 0, 0, 0)',
             }}
           >
             {passIcon}
@@ -47,12 +48,12 @@ const DraggablePassIcon = props => {
 };
 
 DraggablePassIcon.propTypes = {
-  classes: PropTypes.object.isRequired,
-  passIcon: PropTypes.string.isRequired
+  classes: PropTypes.objectOf(PropTypes.string),
+  passIcon: PropTypes.string.isRequired,
 };
 
 const ItemTypes = {
-  ICON: 'icon'
+  ICON: 'icon',
 };
 
 const sourceSpec = {
@@ -66,27 +67,27 @@ const sourceSpec = {
       return;
     }
     pairIcon(item.passIcon, dropResult.passIcon);
-  }
+  },
 };
 
 const targetSpec = {
   drop(props) {
     return { passIcon: props.passIcon };
-  }
+  },
 };
 
 const sourceCollect = (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
-  isDragging: monitor.isDragging()
+  isDragging: monitor.isDragging(),
 });
 
 const targetCollect = (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
   isOver: monitor.isOver(),
-  canDrop: monitor.canDrop()
+  canDrop: monitor.canDrop(),
 });
 
 export default flow([
   DragSource(ItemTypes.ICON, sourceSpec, sourceCollect),
-  DropTarget(ItemTypes.ICON, targetSpec, targetCollect)
+  DropTarget(ItemTypes.ICON, targetSpec, targetCollect),
 ])(withStyles(styles)(view(DraggablePassIcon)));

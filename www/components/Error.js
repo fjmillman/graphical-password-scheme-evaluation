@@ -1,27 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   text: {
-    margin: theme.spacing.unit * 3
-  }
+    margin: theme.spacing.unit * 3,
+  },
 });
 
-const Error = props => (
+const Error = ({ classes }) => (
   <React.Fragment>
-    <Typography component={'h3'} variant={'h5'} className={props.classes.text}>
+    <Typography component="h3" variant="h5" className={classes.text}>
       Error
     </Typography>
-    <Typography component={'p'} align={'center'} className={props.classes.text}>
-      Error: You shouldn't be here
+    <Typography component="p" align="center" className={classes.text}>
+      Error: You shouldn&apos;t be here
     </Typography>
   </React.Fragment>
 );
 
 Error.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.objectOf(PropTypes.string),
 };
 
 export default withStyles(styles)(Error);
