@@ -48,8 +48,8 @@ const PassIconDragAndDrop = ({ classes, passIcons }) => {
 
   const progressIcons = getStageProgress()
     .concat(Array(6 - getStageProgress().length).fill(false))
-    .map(value => (
-      <Grid key={value} item>
+    .map((value, key) => (
+      <Grid key={key} item>
         {value ? activeProgress(value) : inactiveProgress}
       </Grid>
     ));
