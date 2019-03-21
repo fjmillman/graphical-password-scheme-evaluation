@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { view } from "react-easy-state";
-import { withStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
+import { withStyles } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
+import Icon from "@material-ui/core/Icon";
 import { toggleIcon } from "../store/updaters/toggleIcon";
 import { getToggle } from "../store/selectors/getToggle";
 
@@ -49,7 +49,7 @@ const PassIcon = props => (
 
 PassIcon.propTypes = {
     classes: PropTypes.object.isRequired,
-    passIcon: PropTypes.object.isRequired,
+    passIcon: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(view(PassIcon));

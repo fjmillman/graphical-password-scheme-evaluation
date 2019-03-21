@@ -6,7 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { login } from "../store/updaters/login";
 import { getPassIcons } from "../store/selectors/getPassIcons";
-import PassIconGrid from "./PassIconGrid";
+import PassIconSelect from "./PassIconSelect";
+import PassIconDragAndDrop from "./PassIconDragAndDrop";
 import { getCurrentStage } from "../store/selectors/getCurrentStage";
 
 const styles = theme => ({
@@ -37,7 +38,7 @@ const Login = props => (
         >
             Stage {getCurrentStage()} of 3
         </Typography>
-        <PassIconGrid passIcons={getPassIcons()}/>
+        {props.scheme === 1 ? <PassIconSelect passIcons={getPassIcons()}/> : <PassIconDragAndDrop passIcons={getPassIcons()}/>}
         <Button
             variant="contained"
             className={props.classes.button}
@@ -55,6 +56,7 @@ const Login = props => (
 
 Login.propTypes = {
     classes: PropTypes.object.isRequired,
+    scheme: PropTypes.number.isRequired,
 };
 
 export default withStyles(styles)(view(Login));

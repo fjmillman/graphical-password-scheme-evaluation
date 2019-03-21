@@ -4,8 +4,8 @@ import { view } from "react-easy-state";
 import { withStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import PassIcon from "./PassIcon";
 import { getIsRegistration } from "../store/selectors/getIsRegistration";
+import PassIcon from "./PassIcon";
 
 const styles = () => ({
     root: {
@@ -21,10 +21,10 @@ const styles = () => ({
     loginGridList: {
         width: 250,
         height: 350,
-    }
+    },
 });
 
-const PassIconGrid = props => {
+const PassIconSelect = props => {
     const passIconGrid = props.passIcons.map(passIcon => (
         <GridListTile key={passIcon}>
             <PassIcon passIcon={passIcon}/>
@@ -44,9 +44,9 @@ const PassIconGrid = props => {
     );
 };
 
-PassIconGrid.propTypes = {
+PassIconSelect.propTypes = {
     classes: PropTypes.object.isRequired,
     passIcons: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(view(PassIconGrid));
+export default withStyles(styles)(view(PassIconSelect));

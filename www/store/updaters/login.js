@@ -1,6 +1,7 @@
 import state from "../state";
 import { nextPage } from "./nextPage";
 import { isValid } from "../selectors/isValid";
+import { isDragAndDropValid } from "../selectors/isDragAndDropValid";
 import { getRandomStage } from "../selectors/getRandomStage";
 import { endTimer } from "./endTimer";
 import { startTimer } from "./startTimer";
@@ -16,7 +17,7 @@ export function login() {
         time: endTimer()
     };
 
-    if (isValid()) {
+    if ((state.scheme === 1 && isValid()) || (state.scheme === 2 && isDragAndDropValid())) {
         state.valid++;
         login.valid = true;
     }

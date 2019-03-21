@@ -4,7 +4,7 @@ import { view } from "react-easy-state";
 import { withStyles } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import PassIconGrid from "./PassIconGrid";
+import PassIconSelect from "./PassIconSelect";
 import { getPassIcons } from "../store/selectors/getPassIcons";
 import { guess } from "../store/updaters/guess";
 
@@ -36,7 +36,7 @@ const Guess = props => (
         >
             Make a guess on what you think the password is based on the previous observation
         </Typography>
-        <PassIconGrid passIcons={getPassIcons()}/>
+        <PassIconSelect passIcons={getPassIcons()}/>
         <Button
             variant="contained"
             className={props.classes.button}
