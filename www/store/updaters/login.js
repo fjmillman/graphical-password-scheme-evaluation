@@ -33,6 +33,12 @@ export function login() {
         return;
     }
 
+    if (state.valid === 3) {
+        alert("You logged in successfully");
+    } else {
+        alert("You failed to login successfully");
+    }
+
     state.schemeResult.authentications.push(state.authentication);
     state.iterations++;
     state.stage = 0;
