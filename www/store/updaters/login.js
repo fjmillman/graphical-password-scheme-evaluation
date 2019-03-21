@@ -27,6 +27,7 @@ export function login() {
     startTimer();
 
     if (state.stage < 2) {
+        state.progress++;
         state.stage++;
         state.selected = [];
         state.currentPassIcons = getRandomStage();

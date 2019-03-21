@@ -4,6 +4,7 @@ import { startTimer } from "./startTimer";
 
 export function nextPage() {
     if (state.page === 0) setScheme();
+    state.progress++;
     state.page++;
     if (state.page === 3 || state.page === 10) startTimer();
 }

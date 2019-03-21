@@ -1,6 +1,7 @@
 import { store } from "react-easy-state";
 
 const state = store({
+    progress: 0,
     page: 0,
     scheme: 1,
     startTime: 0,

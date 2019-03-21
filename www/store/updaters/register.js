@@ -11,5 +11,6 @@ export function register() {
     state.currentPassIcons = getRandomStage();
     state.isRegistration = !state.isRegistration;
     state.isLogin = !state.isLogin;
+    state.progress++;
     startTimer();
 }
