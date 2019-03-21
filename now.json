@@ -21,9 +21,5 @@
       "dest": "/www/$1"
     }
   ],
-  "env": {
-    "MONGODB_USERNAME": "@mongodb-username",
-    "MONGODB_PASSWORD": "@mongodb-password"
-  },
   "alias": ["gpa-evaluation"]
 }
