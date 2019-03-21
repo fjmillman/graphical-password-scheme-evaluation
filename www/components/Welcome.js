@@ -31,7 +31,7 @@ const Welcome = props => (
             component={"p"}
             className={props.classes.text}
         >
-            Thank you for participating in the graphical password authentication scheme study!
+            Thank you for participating in the study!
         </Typography>
         <Typography
             component={"p"}
@@ -61,7 +61,7 @@ const Welcome = props => (
             component={"p"}
             className={props.classes.text}
         >
-            Click on the button below to accept these terms and conditions and begin the study.
+            Click on the button below to accept these terms and conditions.
         </Typography>
         <Button
             variant="contained"

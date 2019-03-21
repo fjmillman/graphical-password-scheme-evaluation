@@ -33,35 +33,48 @@ const Brief = props => (
             component={"p"}
             className={props.classes.text}
         >
-            You will be presented with a pair of prototypes based on its corresponding graphical password scheme
-            and you will run through the following steps in order for each prototype:
-            <List disablePadding={true} dense={true}>
-                <ListItem>
-                    <ListItemText primary="1) Read through the instructions for use"/>
-                </ListItem>
-                <ListItem>
-                    <ListItemText primary="2) Attempt to authenticate (register and login) 10 times"/>
-                </ListItem>
-                <ListItem>
-                    <ListItemText primary="3) Observe a clip of the researcher logging in"/>
-                </ListItem>
-                <ListItem>
-                    <ListItemText primary="4) Guess the password after the first observation"/>
-                </ListItem>
-                <ListItem>
-                    <ListItemText primary="5) Observe 2 more clips of the researcher logging in"/>
-                </ListItem>
-                <ListItem>
-                    <ListItemText primary="6) Guess the password after the third and final observation"/>
-                </ListItem>
-            </List>
+            You will be presented with a pair of prototypes based on their corresponding graphical password
+            authentication schemes and you will run through the following steps in order for each prototype:
+        </Typography>
+        <List
+            disablePadding={true}
+            dense={true}
+            className={props.classes.text}
+        >
+            <ListItem>
+                <ListItemText primary="1) Read through the instructions for use"/>
+            </ListItem>
+            <ListItem>
+                <ListItemText primary="2) Attempt to authenticate (register and login) 10 times"/>
+            </ListItem>
+            <ListItem>
+                <ListItemText primary="3) Observe a clip of the researcher logging in"/>
+            </ListItem>
+            <ListItem>
+                <ListItemText primary="4) Guess the password after the first observation"/>
+            </ListItem>
+            <ListItem>
+                <ListItemText primary="5) Observe 2 more clips of the researcher logging in"/>
+            </ListItem>
+            <ListItem>
+                <ListItemText primary="6) Guess the password after the third and final observation"/>
+            </ListItem>
+        </List>
+        <Typography
+            component={"p"}
+            className={props.classes.text}
+        >
+            You will be asked to read through the instructions to learn about and understand how to use the
+            corresponding prototype, and then you will be required to register and login with the scheme 10 times
+            to ensure that you know how to use it.
         </Typography>
         <Typography
             component={"p"}
             className={props.classes.text}
         >
-            After completing this study, you will be asked to provide your age and gender before submitting your
-            results.
+            In order to ensure that the results obtained are accurate throughout the course of the study, please run
+            through the above steps for each scheme carefully without taking a break. If necessary, you may choose to
+            take a break in between the 2 schemes.
         </Typography>
         <Typography
             component={"p"}
