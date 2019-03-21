@@ -1,9 +1,23 @@
 {
-  "name": "graphical-password-scheme-evaluation-web",
+  "name": "graphical-password-scheme-evaluation-www",
+  "description": "The front-end for the graphical password scheme evaluation app",
   "version": "1.0.0",
-  "author": "fjmillman",
-  "license": "MIT",
   "main": "index.js",
+  "author": "Freddie John Millman <freddie.millman@icloud.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "next",
+    "lint": "eslint",
+    "prettier": "prettier **/*.js --write",
+    "lint-staged": "lint-staged"
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@material-ui/core": "^3.9.0",
     "@material-ui/icons": "^3.0.2",
@@ -20,7 +34,16 @@
     "react-native": "^0.59.1",
     "react-player": "^1.9.3"
   },
-  "scripts": {
-    "start": "next"
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "lint-staged": "^7.2.2",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.14.2"
   }
 }
