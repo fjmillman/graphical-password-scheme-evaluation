@@ -20,7 +20,7 @@ const Complete = ({ classes }) => (
     </Typography>
     <Typography component="p" className={classes.text}>
       If you would like to keep up to date with how these results will be used
-      in my research project, you can email me at anytime by contacting me at
+      in my research project, you can email me at anytime by contacting me at{' '}
       <Link href="mailto:fjm30@bath.ac.uk">fjm30@bath.ac.uk</Link>.
     </Typography>
   </React.Fragment>
