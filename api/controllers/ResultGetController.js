@@ -5,7 +5,7 @@ const ResultGetController = (req, res, next) => {
     connect();
 
     Result.find(function (error, results) {
-        if (error) return console.error(error);
+        if (error) next(error);
         res.json(results.length);
     });
 };
