@@ -15,7 +15,7 @@ export default function isDragAndDropValid() {
             state.icons.flag.includes(icon.target)) ||
           (state.icons.flag.includes(icon.source) &&
             state.icons.pass.includes(icon.target))
-      ).length >= 1
+      ).length === 1
     );
   }
 
@@ -32,12 +32,12 @@ export default function isDragAndDropValid() {
         icon =>
           state.icons.skip.includes(icon.source) ||
           state.icons.skip.includes(icon.target)
-      ).length >= 1 &&
+      ).length === 1 &&
       state.selected.filter(
         icon =>
           state.icons.pass.includes(icon.source) ||
           state.icons.pass.includes(icon.target)
-      ).length >= 5
+      ).length === 5
     );
   }
 

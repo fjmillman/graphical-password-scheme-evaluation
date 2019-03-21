@@ -9,7 +9,8 @@ export default function isValid() {
 
   if (isRuleOne(passIcons)) {
     return (
-      state.selected.filter(icon => state.icons.pass.includes(icon)).length >= 1
+      state.selected.filter(icon => state.icons.pass.includes(icon)).length ===
+      1
     );
   }
 

@@ -46,20 +46,23 @@ const Instructions = ({ classes, scheme }) => {
         <List disablePadding dense className={classes.text}>
           <ListItem>
             <ListItemText
-              primary="1) If a flag object appears with pass objects and no skip objects, you
-                        need to select 1 pass object and 5 random objects."
+              primary="1) If a flag object appears with pass objects and no skip
+                        objects, you need to select 1 pass object and 5 random
+                        objects."
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="2) If a skip object appears with pass objects regardless of the appearance
-                        of a flag object, you need to select 5 pass objects and 1 skip object."
+              primary="2) If a skip object appears with pass objects regardless
+                        of the appearance of a flag object, you need to select
+                        5 pass objects and 1 skip object."
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="3) If neither a flag object or pass object appears, you need to select 6
-                        random objects."
+              primary="3) If neither a flag object or pass object appears
+                          regardless of the appearance of a skip object, you
+                          need to select 6 random objects."
             />
           </ListItem>
         </List>
@@ -97,22 +100,25 @@ const Instructions = ({ classes, scheme }) => {
         <List disablePadding dense className={classes.text}>
           <ListItem>
             <ListItemText
-              primary="1) If a flag object appears with pass objects and no skip objects, you
-                        need a connection containing a pass object and a flag object, and 5 further connections containing
+              primary="1) If a flag object appears with pass objects and no skip
+                        objects, you need a connection containing a pass object
+                        and a flag object, and 5 further connections containing
                         random objects."
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="2) If a skip object appears with pass objects regardless of the appearance
-                        of a flag object, you need 5 connections containing pass objects and 1 connection containing a
-                        skip object."
+              primary="2) If a skip object appears with pass objects regardless
+                        of the appearance of a flag object, you need 5
+                        connections containing pass objects and 1 connection
+                        containing a skip object."
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="3) If neither a flag object or pass object appears, you need 6 connections
-                        containing random objects."
+              primary="3) If neither a flag object or pass object appears
+                        regardless of the appearance of a skip object, you need
+                        6 connections containing random objects."
             />
           </ListItem>
         </List>
