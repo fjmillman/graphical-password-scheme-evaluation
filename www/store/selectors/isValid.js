@@ -12,9 +12,7 @@ export function isValid() {
     } else if (isRuleTwo(passIcons)) {
         return state.selected.filter(icon => state.icons.skip.includes(icon)).length === 1 &&
             state.selected.filter(icon => state.icons.pass.includes(icon)).length === 5;
-    } else if (isRuleThree(passIcons)) {
-        return true;
     } else {
-        console.error("Error: Rule logic failure");
+        return isRuleThree(passIcons);
     }
 }
