@@ -1,6 +1,5 @@
 import state from '../state';
 import getRandomStage from '../selectors/getRandomStage';
-import endTimer from './endTimer';
 import startTimer from './startTimer';
 
 export default function register() {
@@ -11,8 +10,7 @@ export default function register() {
   )
     return;
 
-  state.icons.time = endTimer();
-  state.authentication.registration = state.icons;
+  state.schemeResult.registration = state.icons;
   state.currentPassIcons = getRandomStage();
   state.isRegistration = !state.isRegistration;
   state.isLogin = !state.isLogin;

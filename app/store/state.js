@@ -9,6 +9,7 @@ const state = store({
   isLogin: 0,
   iterations: 0,
   stage: 0,
+  valid: 0,
   pastStages: [],
   passIcons: [
     'star',
@@ -32,6 +33,9 @@ const state = store({
     'all_inclusive',
     'cake',
     'email',
+    'phone',
+    'search',
+    'delete',
   ],
   currentPassIcons: [],
   setPassIcons: ['work', 'warning', 'weekend', 'computer', 'watch', 'headset'],
@@ -41,12 +45,10 @@ const state = store({
     skip: [],
     flag: [],
   },
-  authentication: {
+  logins: [],
+  schemeResult: {
     registration: {},
     logins: [],
-  },
-  schemeResult: {
-    authentications: [],
     guesses: [],
   },
   result: {

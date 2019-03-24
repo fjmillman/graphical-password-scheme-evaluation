@@ -21,10 +21,13 @@ const Observation = ({ classes, url }) => (
       Observation
     </Typography>
     <Typography component="p" align="center" className={classes.text}>
-      Watch the following video
+      You will now take the role of an over-the-shoulder attacker and observe
+      the researcher progressing through the stages of the login phase for some
+      unknown password. Your goal is to try and determine which pass objects
+      were selected during the registration phase.
     </Typography>
     <div className={classes.video}>
-      <YouTubePlayer url={url} onEnded={nextPage} playing muted />
+      <YouTubePlayer url={url} onEnded={nextPage} muted />
     </div>
   </React.Fragment>
 );

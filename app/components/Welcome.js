@@ -32,7 +32,7 @@ const Welcome = ({ classes }) => (
     </Typography>
     <Typography component="p" className={classes.text}>
       This study is intended for undergraduate students and will take
-      approximately 20 minutes to complete. You will remain anomynous although
+      approximately 20 minutes to complete. You will remain anonymous although
       information on age and gender will be collected for reporting purposes.
     </Typography>
     <Typography component="p" className={classes.text}>

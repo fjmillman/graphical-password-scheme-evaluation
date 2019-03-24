@@ -15,11 +15,11 @@ const styles = () => ({
     overflow: 'hidden',
   },
   registrationGridList: {
-    width: 250,
-    height: 550,
+    width: 305,
+    height: 475,
   },
   loginGridList: {
-    width: 250,
+    width: 260,
     height: 350,
   },
 });
@@ -40,7 +40,7 @@ const PassIconSelect = ({ classes, passIcons }) => {
             ? classes.registrationGridList
             : classes.loginGridList
         }
-        cols={3}
+        cols={getIsRegistration() ? 4 : 3}
       >
         {passIconGrid}
       </GridList>

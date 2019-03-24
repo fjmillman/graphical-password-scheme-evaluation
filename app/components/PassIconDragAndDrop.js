@@ -28,7 +28,7 @@ const styles = () => ({
     fontSize: 14,
   },
   gridList: {
-    width: 250,
+    width: 255,
     height: 350,
   },
 });

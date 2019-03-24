@@ -20,7 +20,8 @@ export default function guess() {
     }
 
     state.schemeResult = {
-      authentications: [],
+      registration: {},
+      logins: [],
       guesses: [],
     };
   }

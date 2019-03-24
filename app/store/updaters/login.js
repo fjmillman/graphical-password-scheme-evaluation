@@ -25,7 +25,7 @@ export default function login() {
     attempt.valid = true;
   }
 
-  state.authentication.logins.push(attempt);
+  state.logins.push(attempt);
 
   startTimer();
 
@@ -43,25 +43,22 @@ export default function login() {
     alert('You failed to login successfully');
   }
 
-  state.schemeResult.authentications.push(state.authentication);
+  state.schemeResult.logins.push(state.logins);
   state.iterations += 1;
   state.stage = 0;
   state.valid = 0;
   state.pastStages = [];
   state.selected = [];
-  state.icons = {
-    pass: [],
-    skip: [],
-    flag: [],
-  };
-  state.authentication = {
-    registration: {},
-    logins: [],
-  };
-  state.isRegistration = !state.isRegistration;
-  state.isLogin = !state.isLogin;
+  state.logins = [];
 
   if (state.iterations === 1) {
+    state.isLogin = !state.isLogin;
+    state.isRegistration = !state.isRegistration;
+    state.icons = {
+      pass: [],
+      skip: [],
+      flag: [],
+    };
     state.iterations = 0;
     nextPage();
   }

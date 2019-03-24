@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Content from '../components/Content';
 import getProgress from '../store/selectors/getProgress';
+import getPageNumber from '../store/selectors/getPageNumber';
 
 const styles = theme => ({
   layout: {
@@ -29,15 +30,16 @@ const IndexPage = ({ classes }) => (
   <React.Fragment>
     <div className={classes.layout}>
       <Toolbar>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-        >
+        <Typography component="h2" variant="h5">
           Graphical Password Scheme User Study
         </Typography>
+        {getPageNumber() < 2 || getPageNumber() > 15 ? (
+          ''
+        ) : (
+          <Typography component="h2" variant="h6">
+            &nbsp;| Scheme {getPageNumber() < 9 ? '1' : '2'}
+          </Typography>
+        )}
       </Toolbar>
       <LinearProgress
         color="secondary"
