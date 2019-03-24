@@ -50,8 +50,9 @@ export default function login() {
   state.pastStages = [];
   state.selected = [];
   state.logins = [];
+  state.currentPassIcons = getRandomStage();
 
-  if (state.iterations === 1) {
+  if (state.iterations === 10) {
     state.isLogin = !state.isLogin;
     state.isRegistration = !state.isRegistration;
     state.icons = {

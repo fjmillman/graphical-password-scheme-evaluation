@@ -30,22 +30,25 @@ const styles = () => ({
 });
 
 const PassIcon = ({ classes, passIcon }) => (
-  <IconButton
-    onClick={() => toggleIcon(passIcon)}
-    className={
-      !getToggle(passIcon)
-        ? classes.inactiveIcon
-        : getToggle(passIcon) === 'pass'
-        ? classes.passIcon
-        : getToggle(passIcon) === 'flag'
-        ? classes.flagIcon
-        : getToggle(passIcon) === 'skip'
-        ? classes.skipIcon
-        : classes.activeIcon
-    }
-  >
-    <Icon className={classes.icon}>{passIcon}</Icon>
-  </IconButton>
+  <div style={{ textAlign: 'center' }}>
+    <IconButton
+      onClick={() => toggleIcon(passIcon)}
+      style={{ display: 'inline-block' }}
+      className={
+        !getToggle(passIcon)
+          ? classes.inactiveIcon
+          : getToggle(passIcon) === 'pass'
+          ? classes.passIcon
+          : getToggle(passIcon) === 'flag'
+          ? classes.flagIcon
+          : getToggle(passIcon) === 'skip'
+          ? classes.skipIcon
+          : classes.activeIcon
+      }
+    >
+      <Icon className={classes.icon}>{passIcon}</Icon>
+    </IconButton>
+  </div>
 );
 
 PassIcon.propTypes = {

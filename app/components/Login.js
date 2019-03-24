@@ -9,10 +9,15 @@ import getPassIcons from '../store/selectors/getPassIcons';
 import PassIconSelect from './PassIconSelect';
 import PassIconDragAndDrop from './PassIconDragAndDrop';
 import getCurrentStage from '../store/selectors/getCurrentStage';
+import getIteration from '../store/selectors/getIteration';
 
 const styles = theme => ({
   text: {
     margin: theme.spacing.unit * 3,
+  },
+  leftButton: {
+    margin: theme.spacing.unit,
+    marginTop: theme.spacing.unit * 5,
   },
   button: {
     margin: theme.spacing.unit,
@@ -25,7 +30,7 @@ const styles = theme => ({
 const Login = ({ classes, scheme }) => (
   <React.Fragment>
     <Typography component="h3" variant="h5" className={classes.text}>
-      Log in
+      Log in | Attempt {getIteration() + 1} of 10
     </Typography>
     <Typography component="p" align="center" className={classes.text}>
       Stage {getCurrentStage()} of 3
@@ -35,6 +40,19 @@ const Login = ({ classes, scheme }) => (
     ) : (
       <PassIconDragAndDrop passIcons={getPassIcons()} />
     )}
+    <Button variant="contained" className={classes.leftButton}>
+      <a
+        href={
+          scheme === 1 ? '/instructions-scheme-one' : '/instructions-scheme-two'
+        }
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Typography variant="subtitle1" color="primary">
+          Instructions
+        </Typography>
+      </a>
+    </Button>
     <Button variant="contained" className={classes.button} onClick={login}>
       <Typography variant="subtitle1" color="primary">
         Login
