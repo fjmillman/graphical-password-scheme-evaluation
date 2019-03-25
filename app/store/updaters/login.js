@@ -17,6 +17,7 @@ export default function login() {
     selected: state.selected,
     valid: false,
     time: endTimer(),
+    stage: state.pastStages.slice(-1).pop(),
   };
 
   if (
