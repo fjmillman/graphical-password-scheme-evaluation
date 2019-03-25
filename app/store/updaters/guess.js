@@ -2,11 +2,6 @@ import state from '../state';
 import nextPage from './nextPage';
 
 export default function guess() {
-  if (state.selected.length < 6) {
-    alert('You must select 6 icons');
-    return;
-  }
-
   state.schemeResult.guesses.push({
     selected: state.selected,
     valid: state.selected.filter(icon =>

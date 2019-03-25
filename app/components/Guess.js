@@ -26,9 +26,9 @@ const Guess = ({ classes }) => (
       Guess
     </Typography>
     <Typography component="p" align="center" className={classes.text}>
-      You now need to guess as many of the 6 pass objects you believe were
-      selected during the registration phase as possible based on your previous
-      observations.
+      You now need to make an educated guess on as many of the 6 pass objects
+      you believe were selected during the registration phase as possible based
+      on your previous observations.
     </Typography>
     <PassIconSelect passIcons={getPassIcons()} />
     <Button variant="contained" className={classes.button} onClick={guess}>

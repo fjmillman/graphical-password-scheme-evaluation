@@ -43,35 +43,37 @@ const InstructionsSchemeTwo = ({ classes }) => (
       </Typography>
       <Typography component="p" className={classes.text}>
         The login phase has 3 stages which will appear in a random order. The
-        state of the screen in each stage will dictate which objects you select.
-        Each stage will have a rule allocated to it as follows:
+        state of the screen in each stage will dictate which objects you need to
+        drag and drop. Each stage will have a rule allocated to it as follows:
       </Typography>
       <List disablePadding dense className={classes.text}>
         <ListItem>
           <ListItemText
             primary="1) If the screen contains a flag object with pass objects
-                        and no skip object, you need 1 connection between a pass
+                        and no skip object, you need 1 connection containing a pass
                         object and a flag object."
           />
         </ListItem>
         <ListItem>
           <ListItemText
             primary="2) If the screen contains a skip object with pass objects,
-                        you need 5 connections containing pass objects and 1
-                        connection containing a skip object."
+                        you need 5 connections each containing at least one pass
+                        object in the pair and 1 connection containing at least
+                        one skip object in the pair."
           />
         </ListItem>
         <ListItem>
           <ListItemText
             primary="3) If the screen does not contain a flag object or any pass
-                        objects, you need 6 connections containing random objects."
+                        objects, you need 6 connections containing any random
+                        objects in each pair."
           />
         </ListItem>
       </List>
       <Typography component="p" className={classes.text}>
-        The method of input for this scheme is drag-and-point where the aim is
-        to make 6 connections between the icons by dragging one to the other on
-        the screen. Which rule you follow depends on the appearance of the
+        The method of input for this scheme is drag-and-drop where the aim is to
+        make 6 connections between pairs of icons by dragging one to the other
+        on the screen. Which rule you follow depends on the appearance of the
         signalling objects on the screen. If you pass through each stage
         successfully, you will log in successfully. Otherwise you will fail.
       </Typography>
