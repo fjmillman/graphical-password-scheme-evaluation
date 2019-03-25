@@ -8,6 +8,8 @@ import startTimer from './startTimer';
 
 export default function login() {
   if (state.selected.length !== 6) {
+    if (state.scheme === 1) alert('You must select 6 icons');
+    if (state.scheme === 2) alert('You must make 6 connections');
     return;
   }
 

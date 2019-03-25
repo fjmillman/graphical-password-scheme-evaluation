@@ -15,7 +15,7 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing.unit,
-    marginTop: theme.spacing.unit * 5,
+    marginTop: theme.spacing.unit * 3,
     float: 'right',
     clear: 'both',
   },
@@ -44,7 +44,7 @@ const genders = [
 ];
 
 const Debrief = ({ classes }) => (
-  <React.Fragment>
+  <>
     <Typography component="h3" variant="h5" className={classes.text}>
       Debrief
     </Typography>
@@ -109,7 +109,7 @@ const Debrief = ({ classes }) => (
         Complete
       </Typography>
     </Button>
-  </React.Fragment>
+  </>
 );
 
 Debrief.propTypes = {

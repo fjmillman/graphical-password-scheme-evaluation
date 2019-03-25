@@ -14,14 +14,14 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing.unit,
-    marginTop: theme.spacing.unit * 5,
+    marginTop: theme.spacing.unit * 3,
     float: 'right',
     clear: 'both',
   },
 });
 
 const Guess = ({ classes }) => (
-  <React.Fragment>
+  <>
     <Typography component="h3" variant="h5" className={classes.text}>
       Guess
     </Typography>
@@ -36,7 +36,7 @@ const Guess = ({ classes }) => (
         Submit
       </Typography>
     </Button>
-  </React.Fragment>
+  </>
 );
 
 Guess.propTypes = {

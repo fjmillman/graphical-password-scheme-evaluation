@@ -1,6 +1,5 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import flow from 'lodash/flow';
 import { view } from 'react-easy-state';
 import { withStyles } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
@@ -17,40 +16,6 @@ const styles = () => ({
     display: 'inline-block',
   },
 });
-
-const DraggablePassIcon = props => {
-  const { classes } = props;
-  const { passIcon } = props;
-  const { isDragging, connectDragSource } = props;
-  const { canDrop, isOver, connectDropTarget } = props;
-
-  const isActive = canDrop && isOver;
-
-  return connectDropTarget(
-    connectDragSource(
-      <div style={{ textAlign: 'center' }}>
-        <IconButton disableRipple disableTouchRipple className={classes.button}>
-          <Icon
-            className={classes.icon}
-            style={{
-              opacity: isDragging ? 0.5 : 1,
-              backgroundColor: isActive
-                ? 'rgba(0, 0, 0, 0.2)'
-                : 'rgba(0, 0, 0, 0)',
-            }}
-          >
-            {passIcon}
-          </Icon>
-        </IconButton>
-      </div>
-    )
-  );
-};
-
-DraggablePassIcon.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string),
-  passIcon: PropTypes.string.isRequired,
-};
 
 const ItemTypes = {
   ICON: 'icon',
@@ -87,7 +52,49 @@ const targetCollect = (connect, monitor) => ({
   canDrop: monitor.canDrop(),
 });
 
-export default flow([
-  DragSource(ItemTypes.ICON, sourceSpec, sourceCollect),
-  DropTarget(ItemTypes.ICON, targetSpec, targetCollect),
-])(withStyles(styles)(view(DraggablePassIcon)));
+const DraggablePassIcon = props => {
+  const { classes } = props;
+  const { passIcon } = props;
+  const { isDragging, connectDragSource } = props;
+  const { canDrop, isOver, connectDropTarget } = props;
+
+  const isActive = canDrop && isOver;
+
+  return connectDropTarget(
+    connectDragSource(
+      <div style={{ textAlign: 'center' }}>
+        <IconButton
+          disableRipple
+          disableTouchRipple
+          style={{
+            borderRadius: '50%',
+            backgroundColor: isActive
+              ? 'rgba(0, 0, 0, 0.2)'
+              : 'rgba(0, 0, 0, 0)',
+          }}
+          className={classes.button}
+        >
+          <Icon
+            className={classes.icon}
+            style={{
+              opacity: isDragging ? 0.5 : 1,
+            }}
+          >
+            {passIcon}
+          </Icon>
+        </IconButton>
+      </div>
+    )
+  );
+};
+
+DraggablePassIcon.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string),
+  passIcon: PropTypes.string.isRequired,
+};
+
+export default DropTarget(ItemTypes.ICON, targetSpec, targetCollect)(
+  DragSource(ItemTypes.ICON, sourceSpec, sourceCollect)(
+    withStyles(styles)(view(DraggablePassIcon))
+  )
+);

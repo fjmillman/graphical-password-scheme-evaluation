@@ -24,7 +24,7 @@ const styles = theme => ({
 });
 
 const InstructionsSchemeOne = ({ classes }) => (
-  <React.Fragment>
+  <>
     <div className={classes.layout}>
       <Typography component="h3" variant="h5" className={classes.text}>
         Instructions
@@ -75,7 +75,7 @@ const InstructionsSchemeOne = ({ classes }) => (
         you will fail.
       </Typography>
     </div>
-  </React.Fragment>
+  </>
 );
 
 InstructionsSchemeOne.propTypes = {

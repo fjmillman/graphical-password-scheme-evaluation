@@ -11,7 +11,7 @@ const styles = theme => ({
 });
 
 const Complete = ({ classes }) => (
-  <React.Fragment>
+  <>
     <Typography component="h3" variant="h5" className={classes.text}>
       Complete
     </Typography>
@@ -23,7 +23,7 @@ const Complete = ({ classes }) => (
       in my research project, you can email me at anytime by contacting me at{' '}
       <Link href="mailto:fjm30@bath.ac.uk">fjm30@bath.ac.uk</Link>.
     </Typography>
-  </React.Fragment>
+  </>
 );
 
 Complete.propTypes = {

@@ -9,6 +9,7 @@ const state = store({
   isLogin: 0,
   iterations: 0,
   stage: 0,
+  observation: 0,
   valid: 0,
   pastStages: [],
   passIcons: [
@@ -38,7 +39,10 @@ const state = store({
     'delete',
   ],
   currentPassIcons: [],
-  setPassIcons: ['work', 'warning', 'weekend', 'computer', 'watch', 'headset'],
+  setPassIcons: {
+    schemeOne: ['computer', 'phone', 'email', 'headset', 'watch', 'print'],
+    schemeTwo: ['room', 'all_inclusive', 'sync', 'forward', 'flag', 'home'],
+  },
   selected: [],
   icons: {
     pass: [],

@@ -14,7 +14,7 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing.unit,
-    marginTop: theme.spacing.unit * 5,
+    marginTop: theme.spacing.unit * 3,
     float: 'right',
     clear: 'both',
   },
@@ -22,7 +22,7 @@ const styles = theme => ({
 
 const Instructions = ({ classes, scheme }) => {
   const SchemeOneInstructions = () => (
-    <React.Fragment>
+    <>
       <Typography component="p" className={classes.text}>
         There are 2 phases to this graphical password authentication scheme: the
         registration phases, and the login phases.
@@ -71,11 +71,11 @@ const Instructions = ({ classes, scheme }) => {
       <Typography component="p" className={classes.text}>
         Click on the button to continue.
       </Typography>
-    </React.Fragment>
+    </>
   );
 
   const SchemeTwoInstructions = () => (
-    <React.Fragment>
+    <>
       <Typography component="p" className={classes.text}>
         There are 2 phases to this graphical password authentication scheme: the
         registration phase, and the login phase.
@@ -116,20 +116,20 @@ const Instructions = ({ classes, scheme }) => {
         </ListItem>
       </List>
       <Typography component="p" className={classes.text}>
-        The method of input for this scheme is drag-and-point where the aim is
-        to make 6 connections between the icons by dragging one to the other on
-        the screen. Which rule you follow depends on the appearance of the
+        The method of input for this scheme is drag-and-drop where the aim is to
+        make 6 connections between the icons by dragging one to the other on the
+        screen. Which rule you follow depends on the appearance of the
         signalling objects on the screen. If you pass through each stage
         successfully, you will log in successfully. Otherwise you will fail.
       </Typography>
       <Typography component="p" className={classes.text}>
         Click on the button to continue.
       </Typography>
-    </React.Fragment>
+    </>
   );
 
   return (
-    <React.Fragment>
+    <>
       <Typography component="h3" variant="h5" className={classes.text}>
         Instructions
       </Typography>
@@ -139,7 +139,7 @@ const Instructions = ({ classes, scheme }) => {
           Continue
         </Typography>
       </Button>
-    </React.Fragment>
+    </>
   );
 };
 

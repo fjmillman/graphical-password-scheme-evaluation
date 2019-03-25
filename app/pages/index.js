@@ -23,11 +23,12 @@ const styles = theme => ({
   main: {
     margin: theme.spacing.unit * 3,
     marginTop: theme.spacing.unit * 5,
+    marginBottom: theme.spacing.unit * 5,
   },
 });
 
 const IndexPage = ({ classes }) => (
-  <React.Fragment>
+  <>
     <div className={classes.layout}>
       <Toolbar>
         <Typography component="h2" variant="h5">
@@ -50,7 +51,7 @@ const IndexPage = ({ classes }) => (
         <Content />
       </main>
     </div>
-  </React.Fragment>
+  </>
 );
 
 IndexPage.propTypes = {

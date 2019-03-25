@@ -10,14 +10,14 @@ const styles = theme => ({
 });
 
 const Error = ({ classes }) => (
-  <React.Fragment>
+  <>
     <Typography component="h3" variant="h5" className={classes.text}>
       Error
     </Typography>
     <Typography component="p" align="center" className={classes.text}>
       Error: You shouldn&apos;t be here
     </Typography>
-  </React.Fragment>
+  </>
 );
 
 Error.propTypes = {

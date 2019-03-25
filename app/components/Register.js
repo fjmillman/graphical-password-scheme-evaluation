@@ -16,11 +16,11 @@ const styles = theme => ({
   },
   leftButton: {
     margin: theme.spacing.unit,
-    marginTop: theme.spacing.unit * 5,
+    marginTop: theme.spacing.unit * 2,
   },
   button: {
     margin: theme.spacing.unit,
-    marginTop: theme.spacing.unit * 5,
+    marginTop: theme.spacing.unit * 3,
     float: 'right',
     clear: 'both',
   },
@@ -39,7 +39,7 @@ const styles = theme => ({
 });
 
 const Register = ({ classes }) => (
-  <React.Fragment>
+  <>
     <Typography component="h3" variant="h5" className={classes.text}>
       Registration
     </Typography>
@@ -51,6 +51,7 @@ const Register = ({ classes }) => (
     <PassIconSelect passIcons={getPassIcons()} />
     <Button variant="contained" className={classes.leftButton}>
       <a
+        style={{ textDecoration: 'none' }}
         href={
           getScheme() === 1
             ? '/instructions-scheme-one'
@@ -69,7 +70,7 @@ const Register = ({ classes }) => (
         Register
       </Typography>
     </Button>
-  </React.Fragment>
+  </>
 );
 
 Register.propTypes = {

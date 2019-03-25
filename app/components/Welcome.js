@@ -12,14 +12,14 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing.unit,
-    marginTop: theme.spacing.unit * 5,
+    marginTop: theme.spacing.unit * 3,
     float: 'right',
     clear: 'both',
   },
 });
 
 const Welcome = ({ classes }) => (
-  <React.Fragment>
+  <>
     <Typography component="h3" variant="h5" className={classes.text}>
       Welcome
     </Typography>
@@ -54,7 +54,7 @@ const Welcome = ({ classes }) => (
         I Accept
       </Typography>
     </Button>
-  </React.Fragment>
+  </>
 );
 
 Welcome.propTypes = {

@@ -3,7 +3,8 @@ import * as PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import YouTubePlayer from 'react-player/lib/players/YouTube';
-import nextPage from '../store/updaters/nextPage';
+import getObservation from '../store/selectors/getObservation';
+import completeObservation from '../store/updaters/completeObservation';
 
 const styles = theme => ({
   text: {
@@ -16,9 +17,12 @@ const styles = theme => ({
 });
 
 const Observation = ({ classes, url }) => (
-  <React.Fragment>
+  <>
     <Typography component="h3" variant="h5" className={classes.text}>
-      Observation
+      Observation{' '}
+      <Typography inline component="h3" variant="h6">
+        | Attempt {getObservation() + 1} of 3
+      </Typography>
     </Typography>
     <Typography component="p" align="center" className={classes.text}>
       You will now take the role of an over-the-shoulder attacker and observe
@@ -27,9 +31,17 @@ const Observation = ({ classes, url }) => (
       were selected during the registration phase.
     </Typography>
     <div className={classes.video}>
-      <YouTubePlayer url={url} onEnded={nextPage} muted />
+      <YouTubePlayer
+        className={classes.reactPlayer}
+        url={url}
+        onEnded={completeObservation}
+        width="100%"
+        height="600px"
+        controls
+        muted
+      />
     </div>
-  </React.Fragment>
+  </>
 );
 
 Observation.propTypes = {

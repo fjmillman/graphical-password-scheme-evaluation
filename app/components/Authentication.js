@@ -6,9 +6,7 @@ import Login from './Login';
 import state from '../store/state';
 
 const Authentication = ({ scheme }) => (
-  <React.Fragment>
-    {state.isRegistration ? <Register /> : <Login scheme={scheme} />}
-  </React.Fragment>
+  <>{state.isRegistration ? <Register /> : <Login scheme={scheme} />}</>
 );
 
 Authentication.propTypes = {

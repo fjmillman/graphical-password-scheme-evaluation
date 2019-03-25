@@ -24,7 +24,7 @@ const styles = theme => ({
 });
 
 const InstructionsSchemeTwo = ({ classes }) => (
-  <React.Fragment>
+  <>
     <div className={classes.layout}>
       <Typography component="h3" variant="h5" className={classes.text}>
         Instructions
@@ -76,7 +76,7 @@ const InstructionsSchemeTwo = ({ classes }) => (
         successfully, you will log in successfully. Otherwise you will fail.
       </Typography>
     </div>
-  </React.Fragment>
+  </>
 );
 
 InstructionsSchemeTwo.propTypes = {
