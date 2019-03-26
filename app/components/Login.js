@@ -28,7 +28,7 @@ const styles = theme => ({
   },
 });
 
-const Login = ({ classes, scheme }) => (
+const Login = ({ classes }) => (
   <>
     <Typography component="h3" variant="h5" className={classes.text}>
       Log in{' '}
@@ -39,7 +39,7 @@ const Login = ({ classes, scheme }) => (
     <Typography component="p" align="center" className={classes.text}>
       Stage {getCurrentStage()} of 3
     </Typography>
-    {scheme === 1 ? (
+    {getScheme() === 1 ? (
       <PassIconSelect passIcons={getPassIcons()} />
     ) : (
       <PassIconDragAndDrop passIcons={getPassIcons()} />
@@ -70,7 +70,6 @@ const Login = ({ classes, scheme }) => (
 
 Login.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string),
-  scheme: PropTypes.number.isRequired,
 };
 
 export default withStyles(styles)(view(Login));

@@ -4,14 +4,16 @@ import { withStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import YouTubePlayer from 'react-player/lib/players/YouTube';
-import getObservation from '../store/selectors/getObservation';
-import completeObservation from '../store/updaters/completeObservation';
+import getGuess from '../store/selectors/getGuess';
+import getUrl from '../store/selectors/getUrl';
+import nextPage from '../store/updaters/nextPage';
 
 const styles = theme => ({
   text: {
     margin: theme.spacing.unit * 3,
   },
   video: {
+    margin: theme.spacing.unit,
     display: 'flex',
     justifyContent: 'center',
   },
@@ -23,51 +25,89 @@ const styles = theme => ({
   },
 });
 
-const Observation = ({ classes, url }) => (
-  <>
-    <Typography component="h3" variant="h5" className={classes.text}>
-      Observation{' '}
-      <Typography inline component="h3" variant="h6">
-        | Attempt {getObservation() + 1} of 3
+const Observation = ({ classes }) => {
+  const FirstObservation = () => (
+    <>
+      <Typography component="p" align="center" className={classes.text}>
+        You will now take the role of an over-the-shoulder attacker where you
+        have obtained a single observed recording of the researcher logging in
+        with some unknown password. Your goal is to determine the pass objects
+        the researcher selected during the registration phase. You may watch
+        this video as many times as you need and you may use a pen and paper to
+        help you in your goal.
       </Typography>
-    </Typography>
-    <Typography component="p" align="center" className={classes.text}>
-      {getObservation() === 0
-        ? 'You will now take the role of an over-the-shoulder attacker and ' +
-          'observe the researcher progressing through the stages of the login ' +
-          'phase for some unknown password. Your goal is to try and determine ' +
-          'which pass objects were selected during the registration phase.'
-        : getObservation() === 1
-        ? 'You must now observe the researcher attempting to login for a ' +
-          'second time.'
-        : 'You must now observe the researcher attempting to login for a ' +
-          'third and final time.'}
-    </Typography>
-    <div className={classes.video}>
-      <YouTubePlayer
-        className={classes.reactPlayer}
-        url={url}
-        width="100%"
-        height="600px"
-        controls
-        muted
-      />
-    </div>
-    <Button
-      variant="contained"
-      className={classes.button}
-      onClick={completeObservation}
-    >
-      <Typography variant="subtitle1" color="primary">
-        Continue
+      <div className={classes.video}>
+        <YouTubePlayer
+          url={getUrl(1)}
+          width="100%"
+          height="600px"
+          controls
+          muted
+        />
+      </div>
+    </>
+  );
+
+  const SecondObservation = () => (
+    <>
+      <Typography component="p" align="center" className={classes.text}>
+        You have now obtained a further two observed recordings of the
+        researcher logging in with some unknown password each with a random
+        configuration of objects and stages. Your goal is to determine the pass
+        objects the researcher selected during the registration phase. You may
+        watch all three of these video as many times as you need and you may use
+        a pen and paper to help you in your goal.
       </Typography>
-    </Button>
-  </>
-);
+      <div className={classes.video}>
+        <YouTubePlayer
+          url={getUrl(1)}
+          width="100%"
+          height="600px"
+          controls
+          muted
+        />
+      </div>
+      <div className={classes.video}>
+        <YouTubePlayer
+          url={getUrl(2)}
+          width="100%"
+          height="600px"
+          controls
+          muted
+        />
+      </div>
+      <div className={classes.video}>
+        <YouTubePlayer
+          url={getUrl(3)}
+          width="100%"
+          height="600px"
+          controls
+          muted
+        />
+      </div>
+    </>
+  );
+
+  return (
+    <>
+      <Typography component="h3" variant="h5" className={classes.text}>
+        Observation{' '}
+        <Typography inline component="h3" variant="h6">
+          | Attempt {getGuess() + 1} of 2
+        </Typography>
+      </Typography>
+      {getGuess() === 0 ? <FirstObservation /> : <SecondObservation />}
+      <Button variant="contained" className={classes.button} onClick={nextPage}>
+        <Typography variant="subtitle1" color="primary">
+          Continue
+        </Typography>
+      </Button>
+    </>
+  );
+};
 
 Observation.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string),
-  url: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(Observation);

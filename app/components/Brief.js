@@ -47,7 +47,7 @@ const Brief = ({ classes }) => (
       <ListItem>
         <ListItemText
           primary="3) You will take on the role of an over-the-shoulder-attacker
-                      by observing a clip of the researcher logging in"
+                      by observing a recording of the researcher logging in"
         />
       </ListItem>
       <ListItem>
@@ -58,14 +58,14 @@ const Brief = ({ classes }) => (
       </ListItem>
       <ListItem>
         <ListItemText
-          primary="5) You will then observe 2 additional clips of the researcher
-                      logging in"
+          primary="5) You will then observe a further two additional recordings
+                      of the researcher logging in along with the first"
         />
       </ListItem>
       <ListItem>
         <ListItemText
           primary="6) You will finally guess as much of the password as possible
-                      after the third and final observation"
+                      after all three observations"
         />
       </ListItem>
     </List>

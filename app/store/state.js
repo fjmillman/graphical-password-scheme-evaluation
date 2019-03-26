@@ -9,7 +9,7 @@ const state = store({
   isLogin: 0,
   iterations: 0,
   stage: 0,
-  observation: 0,
+  guess: 0,
   valid: 0,
   pastStages: [],
   passIcons: [

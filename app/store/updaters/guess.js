@@ -13,7 +13,13 @@ export default function guess() {
 
   state.selected = [];
 
-  if (state.page === 8 || state.page === 15) {
+  if (state.guess < 1) {
+    state.guess += 1;
+  } else {
+    state.guess = 0;
+  }
+
+  if (state.page === 7 || state.page === 13) {
     if (state.scheme === 1) {
       state.result.scheme1 = state.schemeResult;
       state.scheme = 2;

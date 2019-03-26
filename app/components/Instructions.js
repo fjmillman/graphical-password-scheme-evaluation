@@ -7,6 +7,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
 import nextPage from '../store/updaters/nextPage';
+import getScheme from '../store/selectors/getScheme';
 
 const styles = theme => ({
   text: {
@@ -20,7 +21,7 @@ const styles = theme => ({
   },
 });
 
-const Instructions = ({ classes, scheme }) => {
+const Instructions = ({ classes }) => {
   const SchemeOneInstructions = () => (
     <>
       <Typography component="p" className={classes.text}>
@@ -136,7 +137,11 @@ const Instructions = ({ classes, scheme }) => {
       <Typography component="h3" variant="h5" className={classes.text}>
         Instructions
       </Typography>
-      {scheme === 1 ? <SchemeOneInstructions /> : <SchemeTwoInstructions />}
+      {getScheme() === 1 ? (
+        <SchemeOneInstructions />
+      ) : (
+        <SchemeTwoInstructions />
+      )}
       <Button variant="contained" className={classes.button} onClick={nextPage}>
         <Typography variant="subtitle1" color="primary">
           Continue
@@ -148,7 +153,6 @@ const Instructions = ({ classes, scheme }) => {
 
 Instructions.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string),
-  scheme: PropTypes.number.isRequired,
 };
 
 export default withStyles(styles)(Instructions);

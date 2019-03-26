@@ -10,8 +10,6 @@ import Debrief from './Debrief';
 import Complete from './Complete';
 import Error from './Error';
 import getPageNumber from '../store/selectors/getPageNumber';
-import getScheme from '../store/selectors/getScheme';
-import getUrl from '../store/selectors/getUrl';
 
 const Content = () => {
   switch (getPageNumber()) {
@@ -20,36 +18,32 @@ const Content = () => {
     case 1:
       return <Brief />;
     case 2:
-      return <Instructions scheme={getScheme()} />;
+      return <Instructions />;
     case 3:
-      return <Authentication scheme={getScheme()} />;
+      return <Authentication />;
     case 4:
-      return <Observation url={getUrl(1)} />;
+      return <Observation />;
     case 5:
       return <Guess />;
     case 6:
-      return <Observation url={getUrl(2)} />;
+      return <Observation />;
     case 7:
-      return <Observation url={getUrl(3)} />;
+      return <Guess />;
     case 8:
-      return <Guess />;
+      return <Instructions />;
     case 9:
-      return <Instructions scheme={getScheme()} />;
+      return <Authentication />;
     case 10:
-      return <Authentication scheme={getScheme()} />;
+      return <Observation />;
     case 11:
-      return <Observation url={getUrl(1)} />;
+      return <Guess />;
     case 12:
-      return <Guess />;
+      return <Observation />;
     case 13:
-      return <Observation url={getUrl(2)} />;
-    case 14:
-      return <Observation url={getUrl(3)} />;
-    case 15:
       return <Guess />;
-    case 16:
+    case 14:
       return <Debrief />;
-    case 17:
+    case 15:
       return <Complete />;
     default:
       return <Error />;

@@ -1,5 +1,5 @@
 import state from '../state';
 
 export default function getProgress() {
-  return (state.progress / 60) * 100;
+  return (state.progress / 58) * 100;
 }
