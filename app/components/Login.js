@@ -44,22 +44,6 @@ const Login = ({ classes }) => (
     ) : (
       <PassIconDragAndDrop passIcons={getPassIcons()} />
     )}
-    <Button variant="contained" className={classes.leftButton}>
-      <a
-        style={{ textDecoration: 'none' }}
-        href={
-          getScheme() === 1
-            ? '/instructions-scheme-one'
-            : '/instructions-scheme-two'
-        }
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Typography variant="subtitle1" color="primary">
-          Instructions
-        </Typography>
-      </a>
-    </Button>
     <Button variant="contained" className={classes.button} onClick={login}>
       <Typography variant="subtitle1" color="primary">
         Login

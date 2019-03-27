@@ -25,21 +25,26 @@ const Instructions = ({ classes }) => {
   const SchemeOneInstructions = () => (
     <>
       <Typography component="p" className={classes.text}>
-        There are 2 phases to this graphical password authentication scheme: the
-        registration phases, and the login phases.
+        Here we describe how to use the graphical password authentication
+        scheme. It comes in two phases with a registration component and a login
+        component.
       </Typography>
       <Typography component="p" className={classes.text}>
-        During the registration phases, you will be presented with a grid of
-        icons, each of which you can click on in order to toggle and select.
-        Here you will select 6 pass objects, 3 flag objects, and then 3 skip
-        objects to be registered. The pass objects form your graphical password,
-        the skip objects and the flag objects are defined as signaling objects
-        which dictate the rules of selection during the login phases.
+        As part of the registration you are required to select 6 pass objects, 3
+        flag objects, and 3 skip objects. The pass objects act as your graphical
+        password. The flag objects and the skip objects act as signalling
+        objects.
       </Typography>
       <Typography component="p" className={classes.text}>
-        The login phase has 3 stages which will appear in a random order. The
-        state of the screen in each stage will dictate which objects you select.
-        Each stage will have a rule allocated to it as follows:
+        During the login phase you will be asked to follow the login process.
+        You will be faced with a random selection of objects on the screen which
+        are randomly changed over three different stages. You will be required
+        to drag and drop objects to form a connection between pairs of objects.
+      </Typography>
+      <Typography component="p" className={classes.text}>
+        Which objects you choose depends on the appearance (or non-appearance)
+        of the signalling objects on the screen. The following rules apply for
+        each screen in a random order:
       </Typography>
       <List disablePadding dense className={classes.text}>
         <ListItem>
@@ -52,26 +57,19 @@ const Instructions = ({ classes }) => {
         <ListItem>
           <ListItemText
             primary="2) If the screen contains a skip object with pass objects,
-                        you need to select 1 skip object along with 5 pass
-                        objects."
+                        you need to select 5 pass objects and 1 skip object."
           />
         </ListItem>
         <ListItem>
           <ListItemText
-            primary="3) If the screen does not contain a flag object or any pass
-                        objects, you need to select 6 random objects."
+            primary="3) If the screen does not contain a flag object or any
+                        pass objects, you need to select 6 random objects."
           />
         </ListItem>
       </List>
       <Typography component="p" className={classes.text}>
-        The method of input for this scheme is selection where the aim is to
-        select 6 icons on the screen. Which rule you follow depends on the
-        appearance of the signalling objects on the screen as above. If you pass
-        through each stage successfully, you will log in successfully. Otherwise
-        you will fail.
-      </Typography>
-      <Typography component="p" className={classes.text}>
-        Click on the button to continue.
+        If you pass through each stage successfully, you will log in
+        successfully. Otherwise you will fail.
       </Typography>
     </>
   );
@@ -79,21 +77,26 @@ const Instructions = ({ classes }) => {
   const SchemeTwoInstructions = () => (
     <>
       <Typography component="p" className={classes.text}>
-        There are 2 phases to this graphical password authentication scheme: the
-        registration phase, and the login phase.
+        Here we describe how to use the graphical password authentication
+        scheme. It comes in two phases with a registration component and a login
+        component.
       </Typography>
       <Typography component="p" className={classes.text}>
-        During the registration phase, you will be presented with a grid of
-        icons, each of which you can click on in order to toggle and select.
-        Here you will select 6 pass objects, 3 flag objects, and 3 skip objects
-        to be registered. The pass objects form your graphical password, the
-        skip objects and the flag objects are defined as signalling objects
-        which dictate the rules of selection during the login phase.
+        As part of the registration you are required to select 6 pass objects, 3
+        flag objects, and 3 skip objects. The pass objects act as your graphical
+        password. The flag objects and the skip objects act as signalling
+        objects.
       </Typography>
       <Typography component="p" className={classes.text}>
-        The login phase has 3 stages which will appear in a random order. The
-        state of the screen in each stage will dictate which objects you need to
-        drag and drop. Each stage will have a rule allocated to it as follows:
+        During the login phase you will be asked to follow the login process.
+        You will be faced with a random selection of objects on the screen which
+        are randomly changed over three different stages. You will be required
+        to drag and drop objects to form a connection between pairs of objects.
+      </Typography>
+      <Typography component="p" className={classes.text}>
+        Which objects you choose depends on the appearance (or non-appearance)
+        of the signalling objects on the screen. The following rules apply for
+        each screen in a random order:
       </Typography>
       <List disablePadding dense className={classes.text}>
         <ListItem>
@@ -120,14 +123,8 @@ const Instructions = ({ classes }) => {
         </ListItem>
       </List>
       <Typography component="p" className={classes.text}>
-        The method of input for this scheme is drag-and-drop where the aim is to
-        make 6 connections between pairs of icons by dragging one to the other
-        on the screen. Which rule you follow depends on the appearance of the
-        signalling objects on the screen. If you pass through each stage
-        successfully, you will log in successfully. Otherwise you will fail.
-      </Typography>
-      <Typography component="p" className={classes.text}>
-        Click on the button to continue.
+        If you pass through each stage successfully, you will log in
+        successfully. Otherwise you will fail.
       </Typography>
     </>
   );
@@ -142,6 +139,13 @@ const Instructions = ({ classes }) => {
       ) : (
         <SchemeTwoInstructions />
       )}
+      <Typography component="p" className={classes.text}>
+        You can click on the upper right page button during the study for these
+        instructions if you need them.
+      </Typography>
+      <Typography component="p" className={classes.text}>
+        Click on the button to continue.
+      </Typography>
       <Button variant="contained" className={classes.button} onClick={nextPage}>
         <Typography variant="subtitle1" color="primary">
           Continue

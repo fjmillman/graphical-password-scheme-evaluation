@@ -8,7 +8,6 @@ import FiberManualRecord from '@material-ui/icons/FiberManualRecord';
 import register from '../store/updaters/register';
 import getPassIcons from '../store/selectors/getPassIcons';
 import PassIconSelect from './PassIconSelect';
-import getScheme from '../store/selectors/getScheme';
 
 const styles = theme => ({
   text: {
@@ -49,22 +48,6 @@ const Register = ({ classes }) => (
       <FiberManualRecord className={classes.skipIcon} /> 3 skip objects
     </Typography>
     <PassIconSelect passIcons={getPassIcons()} />
-    <Button variant="contained" className={classes.leftButton}>
-      <a
-        style={{ textDecoration: 'none' }}
-        href={
-          getScheme() === 1
-            ? '/instructions-scheme-one'
-            : '/instructions-scheme-two'
-        }
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Typography variant="subtitle1" color="primary">
-          Instructions
-        </Typography>
-      </a>
-    </Button>
     <Button variant="contained" className={classes.button} onClick={register}>
       <Typography variant="subtitle1" color="primary">
         Register
