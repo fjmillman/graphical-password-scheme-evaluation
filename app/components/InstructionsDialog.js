@@ -107,15 +107,16 @@ class InstructionsDialog extends React.Component {
             <ListItemText
               primary="1) If the screen contains a flag object with pass objects
                         and no skip object, you need 1 connection containing a
-                        pass object and a flag object."
+                        pass object and a flag object in the pair and 5
+                        connections containing any random objects in the pairs."
             />
           </ListItem>
           <ListItem>
             <ListItemText
               primary="2) If the screen contains a skip object with pass objects,
-                        you need 5 connections each containing at least one pass
-                        object in the pair and 1 connection containing at least
-                        one skip object in the pair."
+                        you need 5 connections each containing one pass
+                        object in each pair and 1 connection containing one skip
+                        object in the pair."
             />
           </ListItem>
           <ListItem>

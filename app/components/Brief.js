@@ -41,7 +41,11 @@ const Brief = ({ classes }) => (
         <ListItemText
           primary="2) You will attempt to authenticate by registering once and
                       then logging in 10 times in order to reinforce your
-                      knowledge of how the scheme works"
+                      knowledge of how the scheme works. You will get 5
+                      training attempts with access to the instructions
+                      and the password you registered with via 2 icons in the
+                      upper right. Then you will get 5 test attempts without
+                      these resources."
         />
       </ListItem>
       <ListItem>

@@ -6,6 +6,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
 import InstructionsDialog from './InstructionsDialog';
 import getPageNumber from '../store/selectors/getPageNumber';
+import getIteration from '../store/selectors/getIteration';
+import PasswordDialog from './PasswordDialog';
+import getPassword from '../store/selectors/getPassword';
 
 const styles = () => ({
   grow: {
@@ -17,40 +20,75 @@ class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
+      passwordOpen: false,
+      instructionsOpen: false,
     };
-    this.handleClickOpen = this.handleClickOpen.bind(this);
-    this.handleClose = this.handleClose.bind(this);
+    this.handlePasswordOpen = this.handlePasswordOpen.bind(this);
+    this.handlePasswordClose = this.handlePasswordClose.bind(this);
+    this.handleInstructionsOpen = this.handleInstructionsOpen.bind(this);
+    this.handleInstructionsClose = this.handleInstructionsClose.bind(this);
   }
 
-  handleClickOpen = () => {
+  handlePasswordOpen = () => {
     this.setState({
-      open: true,
+      passwordOpen: true,
     });
   };
 
-  handleClose = () => {
-    this.setState({ open: false });
+  handlePasswordClose = () => {
+    this.setState({ passwordOpen: false });
+  };
+
+  handleInstructionsOpen = () => {
+    this.setState({
+      instructionsOpen: true,
+    });
+  };
+
+  handleInstructionsClose = () => {
+    this.setState({ instructionsOpen: false });
   };
 
   render() {
     const { classes } = this.props;
 
-    const { open } = this.state;
+    const { passwordOpen, instructionsOpen } = this.state;
 
     const SchemeToolbar = () => (
       <>
         <Typography component="h2" variant="h6" className={classes.grow}>
           &nbsp;| Scheme {getPageNumber() < 8 ? '1' : '2'}
         </Typography>
-        <IconButton
-          color="inherit"
-          aria-label="Instructions"
-          onClick={this.handleClickOpen}
-        >
-          <Icon>library_books</Icon>
-        </IconButton>
-        <InstructionsDialog open={open} handleClose={this.handleClose} />
+        {(getPageNumber() !== 3 && getPageNumber() !== 9) ||
+        getIteration() >= 5 ? (
+          ''
+        ) : (
+          <>
+            <IconButton
+              color="inherit"
+              aria-label="Instructions"
+              onClick={this.handlePasswordOpen}
+            >
+              <Icon>border_outer</Icon>
+            </IconButton>
+            <PasswordDialog
+              open={passwordOpen}
+              handleClose={this.handlePasswordClose}
+              password={getPassword()}
+            />
+            <IconButton
+              color="inherit"
+              aria-label="Instructions"
+              onClick={this.handleInstructionsOpen}
+            >
+              <Icon>library_books</Icon>
+            </IconButton>
+            <InstructionsDialog
+              open={instructionsOpen}
+              handleClose={this.handleInstructionsClose}
+            />
+          </>
+        )}
       </>
     );
 
