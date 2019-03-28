@@ -59,7 +59,8 @@ class InstructionsDialog extends React.Component {
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="2) If the screen contains a skip object with pass objects,
+              primary="2) If the screen contains a skip object with pass objects
+                        regardless of whether a flag object is present or not,
                         you need to select 5 pass objects and 1 skip object."
             />
           </ListItem>
@@ -71,7 +72,8 @@ class InstructionsDialog extends React.Component {
           </ListItem>
         </List>
         <Typography gutterBottom>
-          If you pass through each stage successfully, you will log in
+          The appearance of a skip object takes precedence over that of a flag
+          object. If you pass through each stage successfully, you will log in
           successfully. Otherwise you will fail.
         </Typography>
       </>
@@ -114,9 +116,11 @@ class InstructionsDialog extends React.Component {
           <ListItem>
             <ListItemText
               primary="2) If the screen contains a skip object with pass objects,
-                        you need 5 connections each containing one pass
-                        object in each pair and 1 connection containing one skip
-                        object in the pair."
+                        regardless of whether a flag object is present or not,
+                        you need 5 connections each containing at least one pass
+                        object and no skip objects in each pair, and 1 connection
+                        containing at least one skip object and no pass object
+                        in the pair."
             />
           </ListItem>
           <ListItem>
@@ -128,7 +132,8 @@ class InstructionsDialog extends React.Component {
           </ListItem>
         </List>
         <Typography gutterBottom>
-          If you pass through each stage successfully, you will log in
+          The appearance of a skip object takes precedence over that of a flag
+          object. If you pass through each stage successfully, you will log in
           successfully. Otherwise you will fail.
         </Typography>
       </>

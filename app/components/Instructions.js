@@ -68,7 +68,8 @@ const Instructions = ({ classes }) => {
         </ListItem>
       </List>
       <Typography component="p" className={classes.text}>
-        If you pass through each stage successfully, you will log in
+        The appearance of a skip object takes precedence over that of a flag
+        object. If you pass through each stage successfully, you will log in
         successfully. Otherwise you will fail.
       </Typography>
     </>
@@ -110,9 +111,11 @@ const Instructions = ({ classes }) => {
         <ListItem>
           <ListItemText
             primary="2) If the screen contains a skip object with pass objects,
-                        you need 5 connections each containing one pass
-                        object in each pair and 1 connection containing one skip
-                        object in the pair."
+                        regardless of whether a flag object is present or not,
+                        you need 5 connections each containing at least one pass
+                        object and no skip objects in each pair, and 1 connection
+                        containing at least one skip object and no pass object
+                        in the pair."
           />
         </ListItem>
         <ListItem>
@@ -124,7 +127,8 @@ const Instructions = ({ classes }) => {
         </ListItem>
       </List>
       <Typography component="p" className={classes.text}>
-        If you pass through each stage successfully, you will log in
+        The appearance of a skip object takes precedence over that of a flag
+        object. If you pass through each stage successfully, you will log in
         successfully. Otherwise you will fail.
       </Typography>
     </>
