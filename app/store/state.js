@@ -56,6 +56,7 @@ const state = store({
     guesses: [],
   },
   result: {
+    id: '',
     scheme1: {},
     scheme2: {},
     age: '',

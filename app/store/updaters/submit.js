@@ -16,7 +16,7 @@ export default async function submit() {
 
   await axios
     .post(apiUrl, state.result || {})
-    .then(() => console.log(state.result))
+    .then(res => console.log(res))
     .catch(error => console.error(error.stack));
 
   nextPage();

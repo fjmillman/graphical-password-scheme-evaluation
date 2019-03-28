@@ -10,8 +10,9 @@ export default async function setScheme() {
 
   await axios
     .get(apiUrl)
-    .then(response => {
-      state.scheme = response.data % 2 === 0 ? 1 : 2;
+    .then(res => {
+      state.result.id = res.data.id;
+      state.scheme = res.data.length % 2 === 0 ? 1 : 2;
     })
     .catch(error => console.error(error.stack));
 }

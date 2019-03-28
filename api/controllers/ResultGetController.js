@@ -6,7 +6,17 @@ const ResultGetController = async (req, res, next) => {
 
   try {
     const results = await Result.find({});
-    res.json(results.length);
+    const newResult = new Result();
+
+    newResult
+      .save()
+      .then(result => {
+        res.json({
+          id: result.id,
+          length: results.length,
+        });
+      })
+      .catch(err => next(err));
   } catch (err) {
     next(err);
   }
